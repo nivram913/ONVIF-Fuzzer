@@ -1,0 +1,15 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetCertificatesStatus>
+         <!--Zero or more repetitions:-->
+         <wsdl:CertificateStatus>
+            <!--type: token-->
+            <sch:CertificateID>?</sch:CertificateID>
+            <!--type: boolean-->
+            <sch:Status>?</sch:Status>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:CertificateStatus>
+      </wsdl:SetCertificatesStatus>
+   </soap:Body>
+</soap:Envelope>

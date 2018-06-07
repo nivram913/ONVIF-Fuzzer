@@ -1,0 +1,12 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:xm="http://www.w3.org/2005/05/xmlmime" xmlns:inc="http://www.w3.org/2004/08/xop/include">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:UpgradeSystemFirmware>
+         <wsdl:Firmware xm:contentType="application/?">
+            <inc:Include href="?">
+               <!--You may enter ANY elements at this point-->
+            </inc:Include>
+         </wsdl:Firmware>
+      </wsdl:UpgradeSystemFirmware>
+   </soap:Body>
+</soap:Envelope>

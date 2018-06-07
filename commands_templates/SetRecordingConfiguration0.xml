@@ -1,0 +1,29 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/recording/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetRecordingConfiguration>
+         <!--type: RecordingReference-->
+         <wsdl:RecordingToken>?</wsdl:RecordingToken>
+         <wsdl:RecordingConfiguration>
+            <sch:Source>
+               <!--type: anyURI-->
+               <sch:SourceId>?</sch:SourceId>
+               <!--type: Name-->
+               <sch:Name>?</sch:Name>
+               <!--type: Description-->
+               <sch:Location>?</sch:Location>
+               <!--type: Description-->
+               <sch:Description>?</sch:Description>
+               <!--type: anyURI-->
+               <sch:Address>?</sch:Address>
+               <!--You may enter ANY elements at this point-->
+            </sch:Source>
+            <!--type: Description-->
+            <sch:Content>?</sch:Content>
+            <!--type: duration-->
+            <sch:MaximumRetentionTime>?</sch:MaximumRetentionTime>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:RecordingConfiguration>
+      </wsdl:SetRecordingConfiguration>
+   </soap:Body>
+</soap:Envelope>

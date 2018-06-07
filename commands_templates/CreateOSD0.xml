@@ -1,0 +1,65 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/media/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:CreateOSD>
+         <wsdl:OSD token="?">
+            <sch:VideoSourceConfigurationToken>?</sch:VideoSourceConfigurationToken>
+            <!--type: OSDType - enumeration: [Text,Image,Extended]-->
+            <sch:Type>?</sch:Type>
+            <sch:Position>
+               <!--type: string-->
+               <sch:Type>?</sch:Type>
+               <!--Optional:-->
+               <sch:Pos x="?" y="?"/>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:Position>
+            <!--Optional:-->
+            <sch:TextString>
+               <!--type: string-->
+               <sch:Type>?</sch:Type>
+               <!--Optional:-->
+               <!--type: string-->
+               <sch:DateFormat>?</sch:DateFormat>
+               <!--Optional:-->
+               <!--type: string-->
+               <sch:TimeFormat>?</sch:TimeFormat>
+               <!--Optional:-->
+               <!--type: int-->
+               <sch:FontSize>?</sch:FontSize>
+               <!--Optional:-->
+               <sch:FontColor Transparent="?">
+                  <sch:Color X="?" Y="?" Z="?" Colorspace="?"/>
+               </sch:FontColor>
+               <!--Optional:-->
+               <sch:BackgroundColor Transparent="?">
+                  <sch:Color X="?" Y="?" Z="?" Colorspace="?"/>
+               </sch:BackgroundColor>
+               <!--Optional:-->
+               <!--type: string-->
+               <sch:PlainText>?</sch:PlainText>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:TextString>
+            <!--Optional:-->
+            <sch:Image>
+               <!--type: anyURI-->
+               <sch:ImgPath>?</sch:ImgPath>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:Image>
+            <!--Optional:-->
+            <sch:Extension>
+               <!--You may enter ANY elements at this point-->
+            </sch:Extension>
+         </wsdl:OSD>
+         <!--You may enter ANY elements at this point-->
+      </wsdl:CreateOSD>
+   </soap:Body>
+</soap:Envelope>

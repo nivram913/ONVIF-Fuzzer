@@ -1,0 +1,21 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetUser>
+         <!--1 or more repetitions:-->
+         <wsdl:User>
+            <!--type: string-->
+            <sch:Username>?</sch:Username>
+            <!--Optional:-->
+            <!--type: string-->
+            <sch:Password>?</sch:Password>
+            <!--type: UserLevel - enumeration: [Administrator,Operator,User,Anonymous,Extended]-->
+            <sch:UserLevel>?</sch:UserLevel>
+            <!--Optional:-->
+            <sch:Extension>
+               <!--You may enter ANY elements at this point-->
+            </sch:Extension>
+         </wsdl:User>
+      </wsdl:SetUser>
+   </soap:Body>
+</soap:Envelope>

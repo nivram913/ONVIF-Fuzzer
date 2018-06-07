@@ -1,0 +1,11 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/recording/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetRecordingJobMode>
+         <!--type: RecordingJobReference-->
+         <wsdl:JobToken>?</wsdl:JobToken>
+         <!--type: RecordingJobMode-->
+         <wsdl:Mode>?</wsdl:Mode>
+      </wsdl:SetRecordingJobMode>
+   </soap:Body>
+</soap:Envelope>

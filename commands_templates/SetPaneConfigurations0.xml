@@ -1,0 +1,62 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/display/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetPaneConfigurations>
+         <!--type: ReferenceToken-->
+         <wsdl:VideoOutput>?</wsdl:VideoOutput>
+         <!--1 or more repetitions:-->
+         <wsdl:PaneConfiguration>
+            <!--Optional:-->
+            <!--type: string-->
+            <sch:PaneName>?</sch:PaneName>
+            <!--Optional:-->
+            <!--type: ReferenceToken-->
+            <sch:AudioOutputToken>?</sch:AudioOutputToken>
+            <!--Optional:-->
+            <!--type: ReferenceToken-->
+            <sch:AudioSourceToken>?</sch:AudioSourceToken>
+            <!--Optional:-->
+            <sch:AudioEncoderConfiguration token="?">
+               <!--type: Name-->
+               <sch:Name>?</sch:Name>
+               <!--type: int-->
+               <sch:UseCount>?</sch:UseCount>
+               <!--type: AudioEncoding - enumeration: [G711,G726,AAC]-->
+               <sch:Encoding>?</sch:Encoding>
+               <!--type: int-->
+               <sch:Bitrate>?</sch:Bitrate>
+               <!--type: int-->
+               <sch:SampleRate>?</sch:SampleRate>
+               <sch:Multicast>
+                  <sch:Address>
+                     <!--type: IPType - enumeration: [IPv4,IPv6]-->
+                     <sch:Type>?</sch:Type>
+                     <!--Optional:-->
+                     <!--type: IPv4Address-->
+                     <sch:IPv4Address>?</sch:IPv4Address>
+                     <!--Optional:-->
+                     <!--type: IPv6Address-->
+                     <sch:IPv6Address>?</sch:IPv6Address>
+                  </sch:Address>
+                  <!--type: int-->
+                  <sch:Port>?</sch:Port>
+                  <!--type: int-->
+                  <sch:TTL>?</sch:TTL>
+                  <!--type: boolean-->
+                  <sch:AutoStart>?</sch:AutoStart>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Multicast>
+               <!--type: duration-->
+               <sch:SessionTimeout>?</sch:SessionTimeout>
+               <!--You may enter ANY elements at this point-->
+            </sch:AudioEncoderConfiguration>
+            <!--Optional:-->
+            <!--type: ReferenceToken-->
+            <sch:ReceiverToken>?</sch:ReceiverToken>
+            <!--type: ReferenceToken-->
+            <sch:Token>?</sch:Token>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:PaneConfiguration>
+      </wsdl:SetPaneConfigurations>
+   </soap:Body>
+</soap:Envelope>

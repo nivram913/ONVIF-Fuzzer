@@ -1,0 +1,11 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver20/ptz/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:GetPresetTour>
+         <!--type: ReferenceToken-->
+         <wsdl:ProfileToken>?</wsdl:ProfileToken>
+         <!--type: ReferenceToken-->
+         <wsdl:PresetTourToken>?</wsdl:PresetTourToken>
+      </wsdl:GetPresetTour>
+   </soap:Body>
+</soap:Envelope>

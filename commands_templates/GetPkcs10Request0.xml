@@ -1,0 +1,17 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:xm="http://www.w3.org/2005/05/xmlmime" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:GetPkcs10Request>
+         <!--type: token-->
+         <wsdl:CertificateID>?</wsdl:CertificateID>
+         <!--Optional:-->
+         <!--type: string-->
+         <wsdl:Subject>?</wsdl:Subject>
+         <!--Optional:-->
+         <wsdl:Attributes xm:contentType="application/?">
+            <!--type: base64Binary-->
+            <sch:Data>cid:535823093257</sch:Data>
+         </wsdl:Attributes>
+      </wsdl:GetPkcs10Request>
+   </soap:Body>
+</soap:Envelope>

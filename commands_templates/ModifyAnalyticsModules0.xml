@@ -1,0 +1,24 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver20/analytics/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:ModifyAnalyticsModules>
+         <!--type: ReferenceToken-->
+         <wsdl:ConfigurationToken>?</wsdl:ConfigurationToken>
+         <!--1 or more repetitions:-->
+         <wsdl:AnalyticsModule Name="?" Type="?">
+            <sch:Parameters>
+               <!--Zero or more repetitions:-->
+               <sch:SimpleItem Name="?" Value="?"/>
+               <!--Zero or more repetitions:-->
+               <sch:ElementItem Name="?">
+                  <!--You may enter ANY elements at this point-->
+               </sch:ElementItem>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:Parameters>
+         </wsdl:AnalyticsModule>
+      </wsdl:ModifyAnalyticsModules>
+   </soap:Body>
+</soap:Envelope>

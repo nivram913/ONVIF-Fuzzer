@@ -1,0 +1,109 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/analyticsdevice/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetAnalyticsEngineInput>
+         <wsdl:Configuration token="?">
+            <!--type: Name-->
+            <sch:Name>?</sch:Name>
+            <!--type: int-->
+            <sch:UseCount>?</sch:UseCount>
+            <sch:SourceIdentification>
+               <!--type: string-->
+               <sch:Name>?</sch:Name>
+               <!--1 or more repetitions:-->
+               <!--type: ReferenceToken-->
+               <sch:Token>?</sch:Token>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:SourceIdentification>
+            <sch:VideoInput token="?">
+               <!--type: Name-->
+               <sch:Name>?</sch:Name>
+               <!--type: int-->
+               <sch:UseCount>?</sch:UseCount>
+               <!--type: VideoEncoding - enumeration: [JPEG,MPEG4,H264]-->
+               <sch:Encoding>?</sch:Encoding>
+               <sch:Resolution>
+                  <!--type: int-->
+                  <sch:Width>?</sch:Width>
+                  <!--type: int-->
+                  <sch:Height>?</sch:Height>
+               </sch:Resolution>
+               <!--type: float-->
+               <sch:Quality>?</sch:Quality>
+               <!--Optional:-->
+               <sch:RateControl>
+                  <!--type: int-->
+                  <sch:FrameRateLimit>?</sch:FrameRateLimit>
+                  <!--type: int-->
+                  <sch:EncodingInterval>?</sch:EncodingInterval>
+                  <!--type: int-->
+                  <sch:BitrateLimit>?</sch:BitrateLimit>
+               </sch:RateControl>
+               <!--Optional:-->
+               <sch:MPEG4>
+                  <!--type: int-->
+                  <sch:GovLength>?</sch:GovLength>
+                  <!--type: Mpeg4Profile - enumeration: [SP,ASP]-->
+                  <sch:Mpeg4Profile>?</sch:Mpeg4Profile>
+               </sch:MPEG4>
+               <!--Optional:-->
+               <sch:H264>
+                  <!--type: int-->
+                  <sch:GovLength>?</sch:GovLength>
+                  <!--type: H264Profile - enumeration: [Baseline,Main,Extended,High]-->
+                  <sch:H264Profile>?</sch:H264Profile>
+               </sch:H264>
+               <sch:Multicast>
+                  <sch:Address>
+                     <!--type: IPType - enumeration: [IPv4,IPv6]-->
+                     <sch:Type>?</sch:Type>
+                     <!--Optional:-->
+                     <!--type: IPv4Address-->
+                     <sch:IPv4Address>?</sch:IPv4Address>
+                     <!--Optional:-->
+                     <!--type: IPv6Address-->
+                     <sch:IPv6Address>?</sch:IPv6Address>
+                  </sch:Address>
+                  <!--type: int-->
+                  <sch:Port>?</sch:Port>
+                  <!--type: int-->
+                  <sch:TTL>?</sch:TTL>
+                  <!--type: boolean-->
+                  <sch:AutoStart>?</sch:AutoStart>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Multicast>
+               <!--type: duration-->
+               <sch:SessionTimeout>?</sch:SessionTimeout>
+               <!--You may enter ANY elements at this point-->
+            </sch:VideoInput>
+            <sch:MetadataInput>
+               <!--Zero or more repetitions:-->
+               <sch:MetadataConfig Name="?" Type="?">
+                  <sch:Parameters>
+                     <!--Zero or more repetitions:-->
+                     <sch:SimpleItem Name="?" Value="?"/>
+                     <!--Zero or more repetitions:-->
+                     <sch:ElementItem Name="?">
+                        <!--You may enter ANY elements at this point-->
+                     </sch:ElementItem>
+                     <!--Optional:-->
+                     <sch:Extension>
+                        <!--You may enter ANY elements at this point-->
+                     </sch:Extension>
+                  </sch:Parameters>
+               </sch:MetadataConfig>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:MetadataInput>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:Configuration>
+         <!--type: boolean-->
+         <wsdl:ForcePersistence>?</wsdl:ForcePersistence>
+      </wsdl:SetAnalyticsEngineInput>
+   </soap:Body>
+</soap:Envelope>

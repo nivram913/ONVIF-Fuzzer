@@ -1,0 +1,17 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/accesscontrol/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:ExternalAuthorization>
+         <!--type: ReferenceToken-->
+         <wsdl:AccessPointToken>?</wsdl:AccessPointToken>
+         <!--Optional:-->
+         <!--type: ReferenceToken-->
+         <wsdl:CredentialToken>?</wsdl:CredentialToken>
+         <!--Optional:-->
+         <!--type: string-->
+         <wsdl:Reason>?</wsdl:Reason>
+         <!--type: Decision - enumeration: [Granted,Denied]-->
+         <wsdl:Decision>?</wsdl:Decision>
+      </wsdl:ExternalAuthorization>
+   </soap:Body>
+</soap:Envelope>

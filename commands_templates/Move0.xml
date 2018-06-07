@@ -1,0 +1,32 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver20/imaging/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:Move>
+         <!--type: ReferenceToken-->
+         <wsdl:VideoSourceToken>?</wsdl:VideoSourceToken>
+         <wsdl:Focus>
+            <!--Optional:-->
+            <sch:Absolute>
+               <!--type: float-->
+               <sch:Position>?</sch:Position>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:Speed>?</sch:Speed>
+            </sch:Absolute>
+            <!--Optional:-->
+            <sch:Relative>
+               <!--type: float-->
+               <sch:Distance>?</sch:Distance>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:Speed>?</sch:Speed>
+            </sch:Relative>
+            <!--Optional:-->
+            <sch:Continuous>
+               <!--type: float-->
+               <sch:Speed>?</sch:Speed>
+            </sch:Continuous>
+         </wsdl:Focus>
+      </wsdl:Move>
+   </soap:Body>
+</soap:Envelope>

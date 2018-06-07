@@ -1,0 +1,23 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetDNS>
+         <!--type: boolean-->
+         <wsdl:FromDHCP>?</wsdl:FromDHCP>
+         <!--Zero or more repetitions:-->
+         <!--type: token-->
+         <wsdl:SearchDomain>?</wsdl:SearchDomain>
+         <!--Zero or more repetitions:-->
+         <wsdl:DNSManual>
+            <!--type: IPType - enumeration: [IPv4,IPv6]-->
+            <sch:Type>?</sch:Type>
+            <!--Optional:-->
+            <!--type: IPv4Address-->
+            <sch:IPv4Address>?</sch:IPv4Address>
+            <!--Optional:-->
+            <!--type: IPv6Address-->
+            <sch:IPv6Address>?</sch:IPv6Address>
+         </wsdl:DNSManual>
+      </wsdl:SetDNS>
+   </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,10 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/display/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:GetDisplayOptions>
+         <!--type: ReferenceToken-->
+         <wsdl:VideoOutput>?</wsdl:VideoOutput>
+         <!--You may enter ANY elements at this point-->
+      </wsdl:GetDisplayOptions>
+   </soap:Body>
+</soap:Envelope>

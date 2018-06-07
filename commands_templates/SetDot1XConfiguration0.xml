@@ -1,0 +1,41 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetDot1XConfiguration>
+         <wsdl:Dot1XConfiguration>
+            <!--type: ReferenceToken-->
+            <sch:Dot1XConfigurationToken>?</sch:Dot1XConfigurationToken>
+            <!--type: string-->
+            <sch:Identity>?</sch:Identity>
+            <!--Optional:-->
+            <!--type: string-->
+            <sch:AnonymousID>?</sch:AnonymousID>
+            <!--type: int-->
+            <sch:EAPMethod>?</sch:EAPMethod>
+            <!--Zero or more repetitions:-->
+            <!--type: token-->
+            <sch:CACertificateID>?</sch:CACertificateID>
+            <!--Optional:-->
+            <sch:EAPMethodConfiguration>
+               <!--Optional:-->
+               <sch:TLSConfiguration>
+                  <!--type: token-->
+                  <sch:CertificateID>?</sch:CertificateID>
+                  <!--You may enter ANY elements at this point-->
+               </sch:TLSConfiguration>
+               <!--Optional:-->
+               <!--type: string-->
+               <sch:Password>?</sch:Password>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:EAPMethodConfiguration>
+            <!--Optional:-->
+            <sch:Extension>
+               <!--You may enter ANY elements at this point-->
+            </sch:Extension>
+         </wsdl:Dot1XConfiguration>
+      </wsdl:SetDot1XConfiguration>
+   </soap:Body>
+</soap:Envelope>

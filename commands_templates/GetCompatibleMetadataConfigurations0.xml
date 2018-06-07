@@ -1,0 +1,9 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/media/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:GetCompatibleMetadataConfigurations>
+         <!--type: ReferenceToken-->
+         <wsdl:ProfileToken>?</wsdl:ProfileToken>
+      </wsdl:GetCompatibleMetadataConfigurations>
+   </soap:Body>
+</soap:Envelope>

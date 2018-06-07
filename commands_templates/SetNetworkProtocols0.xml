@@ -1,0 +1,21 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetNetworkProtocols>
+         <!--1 or more repetitions:-->
+         <wsdl:NetworkProtocols>
+            <!--type: NetworkProtocolType - enumeration: [HTTP,HTTPS,RTSP]-->
+            <sch:Name>?</sch:Name>
+            <!--type: boolean-->
+            <sch:Enabled>?</sch:Enabled>
+            <!--1 or more repetitions:-->
+            <!--type: int-->
+            <sch:Port>?</sch:Port>
+            <!--Optional:-->
+            <sch:Extension>
+               <!--You may enter ANY elements at this point-->
+            </sch:Extension>
+         </wsdl:NetworkProtocols>
+      </wsdl:SetNetworkProtocols>
+   </soap:Body>
+</soap:Envelope>

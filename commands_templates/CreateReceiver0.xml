@@ -1,0 +1,25 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/receiver/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:CreateReceiver>
+         <wsdl:Configuration>
+            <!--type: ReceiverMode - enumeration: [AutoConnect,AlwaysConnect,NeverConnect,Unknown]-->
+            <sch:Mode>?</sch:Mode>
+            <!--type: anyURI-->
+            <sch:MediaUri>?</sch:MediaUri>
+            <sch:StreamSetup>
+               <!--type: StreamType - enumeration: [RTP-Unicast,RTP-Multicast]-->
+               <sch:Stream>?</sch:Stream>
+               <sch:Transport>
+                  <!--type: TransportProtocol - enumeration: [UDP,TCP,RTSP,HTTP]-->
+                  <sch:Protocol>?</sch:Protocol>
+                  <!--Optional:-->
+                  <sch:Tunnel/>
+               </sch:Transport>
+               <!--You may enter ANY elements at this point-->
+            </sch:StreamSetup>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:Configuration>
+      </wsdl:CreateReceiver>
+   </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,25 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/doorcontrol/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:AccessDoor>
+         <!--type: ReferenceToken-->
+         <wsdl:Token>?</wsdl:Token>
+         <!--Optional:-->
+         <!--type: boolean-->
+         <wsdl:UseExtendedTime>?</wsdl:UseExtendedTime>
+         <!--Optional:-->
+         <!--type: duration-->
+         <wsdl:AccessTime>?</wsdl:AccessTime>
+         <!--Optional:-->
+         <!--type: duration-->
+         <wsdl:OpenTooLongTime>?</wsdl:OpenTooLongTime>
+         <!--Optional:-->
+         <!--type: duration-->
+         <wsdl:PreAlarmTime>?</wsdl:PreAlarmTime>
+         <!--Optional:-->
+         <wsdl:Extension>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:Extension>
+      </wsdl:AccessDoor>
+   </soap:Body>
+</soap:Envelope>

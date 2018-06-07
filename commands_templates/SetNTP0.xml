@@ -1,0 +1,27 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetNTP>
+         <!--type: boolean-->
+         <wsdl:FromDHCP>?</wsdl:FromDHCP>
+         <!--Zero or more repetitions:-->
+         <wsdl:NTPManual>
+            <!--type: NetworkHostType - enumeration: [IPv4,IPv6,DNS]-->
+            <sch:Type>?</sch:Type>
+            <!--Optional:-->
+            <!--type: IPv4Address-->
+            <sch:IPv4Address>?</sch:IPv4Address>
+            <!--Optional:-->
+            <!--type: IPv6Address-->
+            <sch:IPv6Address>?</sch:IPv6Address>
+            <!--Optional:-->
+            <!--type: DNSName-->
+            <sch:DNSname>?</sch:DNSname>
+            <!--Optional:-->
+            <sch:Extension>
+               <!--You may enter ANY elements at this point-->
+            </sch:Extension>
+         </wsdl:NTPManual>
+      </wsdl:SetNTP>
+   </soap:Body>
+</soap:Envelope>

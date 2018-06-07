@@ -1,0 +1,58 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/media/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetVideoAnalyticsConfiguration>
+         <wsdl:Configuration token="?">
+            <!--type: Name-->
+            <sch:Name>?</sch:Name>
+            <!--type: int-->
+            <sch:UseCount>?</sch:UseCount>
+            <sch:AnalyticsEngineConfiguration>
+               <!--Zero or more repetitions:-->
+               <sch:AnalyticsModule Name="?" Type="?">
+                  <sch:Parameters>
+                     <!--Zero or more repetitions:-->
+                     <sch:SimpleItem Name="?" Value="?"/>
+                     <!--Zero or more repetitions:-->
+                     <sch:ElementItem Name="?">
+                        <!--You may enter ANY elements at this point-->
+                     </sch:ElementItem>
+                     <!--Optional:-->
+                     <sch:Extension>
+                        <!--You may enter ANY elements at this point-->
+                     </sch:Extension>
+                  </sch:Parameters>
+               </sch:AnalyticsModule>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:AnalyticsEngineConfiguration>
+            <sch:RuleEngineConfiguration>
+               <!--Zero or more repetitions:-->
+               <sch:Rule Name="?" Type="?">
+                  <sch:Parameters>
+                     <!--Zero or more repetitions:-->
+                     <sch:SimpleItem Name="?" Value="?"/>
+                     <!--Zero or more repetitions:-->
+                     <sch:ElementItem Name="?">
+                        <!--You may enter ANY elements at this point-->
+                     </sch:ElementItem>
+                     <!--Optional:-->
+                     <sch:Extension>
+                        <!--You may enter ANY elements at this point-->
+                     </sch:Extension>
+                  </sch:Parameters>
+               </sch:Rule>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:RuleEngineConfiguration>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:Configuration>
+         <!--type: boolean-->
+         <wsdl:ForcePersistence>?</wsdl:ForcePersistence>
+      </wsdl:SetVideoAnalyticsConfiguration>
+   </soap:Body>
+</soap:Envelope>

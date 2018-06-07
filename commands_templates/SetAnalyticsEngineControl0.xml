@@ -1,0 +1,62 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/analyticsdevice/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetAnalyticsEngineControl>
+         <wsdl:Configuration token="?">
+            <!--type: Name-->
+            <sch:Name>?</sch:Name>
+            <!--type: int-->
+            <sch:UseCount>?</sch:UseCount>
+            <!--type: ReferenceToken-->
+            <sch:EngineToken>?</sch:EngineToken>
+            <!--type: ReferenceToken-->
+            <sch:EngineConfigToken>?</sch:EngineConfigToken>
+            <!--1 or more repetitions:-->
+            <!--type: ReferenceToken-->
+            <sch:InputToken>?</sch:InputToken>
+            <!--1 or more repetitions:-->
+            <!--type: ReferenceToken-->
+            <sch:ReceiverToken>?</sch:ReceiverToken>
+            <!--Optional:-->
+            <sch:Multicast>
+               <sch:Address>
+                  <!--type: IPType - enumeration: [IPv4,IPv6]-->
+                  <sch:Type>?</sch:Type>
+                  <!--Optional:-->
+                  <!--type: IPv4Address-->
+                  <sch:IPv4Address>?</sch:IPv4Address>
+                  <!--Optional:-->
+                  <!--type: IPv6Address-->
+                  <sch:IPv6Address>?</sch:IPv6Address>
+               </sch:Address>
+               <!--type: int-->
+               <sch:Port>?</sch:Port>
+               <!--type: int-->
+               <sch:TTL>?</sch:TTL>
+               <!--type: boolean-->
+               <sch:AutoStart>?</sch:AutoStart>
+               <!--You may enter ANY elements at this point-->
+            </sch:Multicast>
+            <sch:Subscription Name="?" Type="?">
+               <sch:Parameters>
+                  <!--Zero or more repetitions:-->
+                  <sch:SimpleItem Name="?" Value="?"/>
+                  <!--Zero or more repetitions:-->
+                  <sch:ElementItem Name="?">
+                     <!--You may enter ANY elements at this point-->
+                  </sch:ElementItem>
+                  <!--Optional:-->
+                  <sch:Extension>
+                     <!--You may enter ANY elements at this point-->
+                  </sch:Extension>
+               </sch:Parameters>
+            </sch:Subscription>
+            <!--type: ModeOfOperation - enumeration: [Idle,Active,Unknown]-->
+            <sch:Mode>?</sch:Mode>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:Configuration>
+         <!--type: boolean-->
+         <wsdl:ForcePersistence>?</wsdl:ForcePersistence>
+      </wsdl:SetAnalyticsEngineControl>
+   </soap:Body>
+</soap:Envelope>

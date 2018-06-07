@@ -1,0 +1,12 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/search/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:GetMediaAttributes>
+         <!--Zero or more repetitions:-->
+         <!--type: RecordingReference-->
+         <wsdl:RecordingTokens>?</wsdl:RecordingTokens>
+         <!--type: dateTime-->
+         <wsdl:Time>?</wsdl:Time>
+      </wsdl:GetMediaAttributes>
+   </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,9 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:GetServices>
+         <!--type: boolean-->
+         <wsdl:IncludeCapability>?</wsdl:IncludeCapability>
+      </wsdl:GetServices>
+   </soap:Body>
+</soap:Envelope>

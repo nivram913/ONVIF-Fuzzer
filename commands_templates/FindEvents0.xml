@@ -1,0 +1,40 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/search/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:FindEvents>
+         <!--type: dateTime-->
+         <wsdl:StartPoint>?</wsdl:StartPoint>
+         <!--Optional:-->
+         <!--type: dateTime-->
+         <wsdl:EndPoint>?</wsdl:EndPoint>
+         <wsdl:Scope>
+            <!--Zero or more repetitions:-->
+            <sch:IncludedSources Type="http://www.onvif.org/ver10/schema/Receiver">
+               <!--type: ReferenceToken-->
+               <sch:Token>?</sch:Token>
+               <!--You may enter ANY elements at this point-->
+            </sch:IncludedSources>
+            <!--Zero or more repetitions:-->
+            <!--type: RecordingReference-->
+            <sch:IncludedRecordings>?</sch:IncludedRecordings>
+            <!--Optional:-->
+            <!--type: XPathExpression-->
+            <sch:RecordingInformationFilter>?</sch:RecordingInformationFilter>
+            <!--Optional:-->
+            <sch:Extension>
+               <!--You may enter ANY elements at this point-->
+            </sch:Extension>
+         </wsdl:Scope>
+         <wsdl:SearchFilter>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:SearchFilter>
+         <!--type: boolean-->
+         <wsdl:IncludeStartState>?</wsdl:IncludeStartState>
+         <!--Optional:-->
+         <!--type: int-->
+         <wsdl:MaxMatches>?</wsdl:MaxMatches>
+         <!--type: duration-->
+         <wsdl:KeepAliveTime>?</wsdl:KeepAliveTime>
+      </wsdl:FindEvents>
+   </soap:Body>
+</soap:Envelope>

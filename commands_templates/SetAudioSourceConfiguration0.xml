@@ -1,0 +1,19 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/deviceIO/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetAudioSourceConfiguration>
+         <wsdl:Configuration token="?">
+            <!--type: Name-->
+            <sch:Name>?</sch:Name>
+            <!--type: int-->
+            <sch:UseCount>?</sch:UseCount>
+            <!--type: ReferenceToken-->
+            <sch:SourceToken>?</sch:SourceToken>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:Configuration>
+         <!--type: boolean-->
+         <wsdl:ForcePersistence>?</wsdl:ForcePersistence>
+         <!--You may enter ANY elements at this point-->
+      </wsdl:SetAudioSourceConfiguration>
+   </soap:Body>
+</soap:Envelope>

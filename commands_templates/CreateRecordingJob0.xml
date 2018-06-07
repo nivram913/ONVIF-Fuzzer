@@ -1,0 +1,43 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/recording/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:CreateRecordingJob>
+         <wsdl:JobConfiguration>
+            <!--type: RecordingReference-->
+            <sch:RecordingToken>?</sch:RecordingToken>
+            <!--type: RecordingJobMode-->
+            <sch:Mode>?</sch:Mode>
+            <!--type: int-->
+            <sch:Priority>?</sch:Priority>
+            <!--Zero or more repetitions:-->
+            <sch:Source>
+               <!--Optional:-->
+               <sch:SourceToken Type="http://www.onvif.org/ver10/schema/Receiver">
+                  <!--type: ReferenceToken-->
+                  <sch:Token>?</sch:Token>
+                  <!--You may enter ANY elements at this point-->
+               </sch:SourceToken>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <sch:AutoCreateReceiver>?</sch:AutoCreateReceiver>
+               <!--Zero or more repetitions:-->
+               <sch:Tracks>
+                  <!--type: string-->
+                  <sch:SourceTag>?</sch:SourceTag>
+                  <!--type: TrackReference-->
+                  <sch:Destination>?</sch:Destination>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Tracks>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:Source>
+            <!--Optional:-->
+            <sch:Extension>
+               <!--You may enter ANY elements at this point-->
+            </sch:Extension>
+         </wsdl:JobConfiguration>
+      </wsdl:CreateRecordingJob>
+   </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,19 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/events/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:CreatePullPointSubscription>
+         <!--Optional:-->
+         <wsdl:Filter>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:Filter>
+         <!--Optional:-->
+         <!--type: AbsoluteOrRelativeTimeType-->
+         <wsdl:InitialTerminationTime>?</wsdl:InitialTerminationTime>
+         <!--Optional:-->
+         <wsdl:SubscriptionPolicy>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:SubscriptionPolicy>
+         <!--You may enter ANY elements at this point-->
+      </wsdl:CreatePullPointSubscription>
+   </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,153 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver20/imaging/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetImagingSettings>
+         <!--type: ReferenceToken-->
+         <wsdl:VideoSourceToken>?</wsdl:VideoSourceToken>
+         <wsdl:ImagingSettings>
+            <!--Optional:-->
+            <sch:BacklightCompensation>
+               <!--type: BacklightCompensationMode - enumeration: [OFF,ON]-->
+               <sch:Mode>?</sch:Mode>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:Level>?</sch:Level>
+            </sch:BacklightCompensation>
+            <!--Optional:-->
+            <!--type: float-->
+            <sch:Brightness>?</sch:Brightness>
+            <!--Optional:-->
+            <!--type: float-->
+            <sch:ColorSaturation>?</sch:ColorSaturation>
+            <!--Optional:-->
+            <!--type: float-->
+            <sch:Contrast>?</sch:Contrast>
+            <!--Optional:-->
+            <sch:Exposure>
+               <!--type: ExposureMode - enumeration: [AUTO,MANUAL]-->
+               <sch:Mode>?</sch:Mode>
+               <!--Optional:-->
+               <!--type: ExposurePriority - enumeration: [LowNoise,FrameRate]-->
+               <sch:Priority>?</sch:Priority>
+               <!--Optional:-->
+               <sch:Window bottom="?" top="?" right="?" left="?"/>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:MinExposureTime>?</sch:MinExposureTime>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:MaxExposureTime>?</sch:MaxExposureTime>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:MinGain>?</sch:MinGain>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:MaxGain>?</sch:MaxGain>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:MinIris>?</sch:MinIris>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:MaxIris>?</sch:MaxIris>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:ExposureTime>?</sch:ExposureTime>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:Gain>?</sch:Gain>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:Iris>?</sch:Iris>
+            </sch:Exposure>
+            <!--Optional:-->
+            <sch:Focus>
+               <!--type: AutoFocusMode - enumeration: [AUTO,MANUAL]-->
+               <sch:AutoFocusMode>?</sch:AutoFocusMode>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:DefaultSpeed>?</sch:DefaultSpeed>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:NearLimit>?</sch:NearLimit>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:FarLimit>?</sch:FarLimit>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:Focus>
+            <!--Optional:-->
+            <!--type: IrCutFilterMode - enumeration: [ON,OFF,AUTO]-->
+            <sch:IrCutFilter>?</sch:IrCutFilter>
+            <!--Optional:-->
+            <!--type: float-->
+            <sch:Sharpness>?</sch:Sharpness>
+            <!--Optional:-->
+            <sch:WideDynamicRange>
+               <!--type: WideDynamicMode - enumeration: [OFF,ON]-->
+               <sch:Mode>?</sch:Mode>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:Level>?</sch:Level>
+            </sch:WideDynamicRange>
+            <!--Optional:-->
+            <sch:WhiteBalance>
+               <!--type: WhiteBalanceMode - enumeration: [AUTO,MANUAL]-->
+               <sch:Mode>?</sch:Mode>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:CrGain>?</sch:CrGain>
+               <!--Optional:-->
+               <!--type: float-->
+               <sch:CbGain>?</sch:CbGain>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:WhiteBalance>
+            <!--Optional:-->
+            <sch:Extension>
+               <!--You may enter ANY elements at this point-->
+               <!--Optional:-->
+               <sch:ImageStabilization>
+                  <!--type: ImageStabilizationMode - enumeration: [OFF,ON,AUTO,Extended]-->
+                  <sch:Mode>?</sch:Mode>
+                  <!--Optional:-->
+                  <!--type: float-->
+                  <sch:Level>?</sch:Level>
+                  <!--Optional:-->
+                  <sch:Extension>
+                     <!--You may enter ANY elements at this point-->
+                  </sch:Extension>
+               </sch:ImageStabilization>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--Zero or more repetitions:-->
+                  <sch:IrCutFilterAutoAdjustment>
+                     <!--type: string-->
+                     <sch:BoundaryType>?</sch:BoundaryType>
+                     <!--Optional:-->
+                     <!--type: float-->
+                     <sch:BoundaryOffset>?</sch:BoundaryOffset>
+                     <!--Optional:-->
+                     <!--type: duration-->
+                     <sch:ResponseTime>?</sch:ResponseTime>
+                     <!--Optional:-->
+                     <sch:Extension>
+                        <!--You may enter ANY elements at this point-->
+                     </sch:Extension>
+                  </sch:IrCutFilterAutoAdjustment>
+                  <!--Optional:-->
+                  <sch:Extension>
+                     <!--You may enter ANY elements at this point-->
+                  </sch:Extension>
+               </sch:Extension>
+            </sch:Extension>
+         </wsdl:ImagingSettings>
+         <!--Optional:-->
+         <!--type: boolean-->
+         <wsdl:ForcePersistence>?</wsdl:ForcePersistence>
+      </wsdl:SetImagingSettings>
+   </soap:Body>
+</soap:Envelope>

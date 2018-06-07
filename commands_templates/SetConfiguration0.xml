@@ -1,0 +1,104 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver20/ptz/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetConfiguration>
+         <wsdl:PTZConfiguration token="?">
+            <!--type: Name-->
+            <sch:Name>?</sch:Name>
+            <!--type: int-->
+            <sch:UseCount>?</sch:UseCount>
+            <!--type: ReferenceToken-->
+            <sch:NodeToken>?</sch:NodeToken>
+            <!--Optional:-->
+            <!--type: anyURI-->
+            <sch:DefaultAbsolutePantTiltPositionSpace>?</sch:DefaultAbsolutePantTiltPositionSpace>
+            <!--Optional:-->
+            <!--type: anyURI-->
+            <sch:DefaultAbsoluteZoomPositionSpace>?</sch:DefaultAbsoluteZoomPositionSpace>
+            <!--Optional:-->
+            <!--type: anyURI-->
+            <sch:DefaultRelativePanTiltTranslationSpace>?</sch:DefaultRelativePanTiltTranslationSpace>
+            <!--Optional:-->
+            <!--type: anyURI-->
+            <sch:DefaultRelativeZoomTranslationSpace>?</sch:DefaultRelativeZoomTranslationSpace>
+            <!--Optional:-->
+            <!--type: anyURI-->
+            <sch:DefaultContinuousPanTiltVelocitySpace>?</sch:DefaultContinuousPanTiltVelocitySpace>
+            <!--Optional:-->
+            <!--type: anyURI-->
+            <sch:DefaultContinuousZoomVelocitySpace>?</sch:DefaultContinuousZoomVelocitySpace>
+            <!--Optional:-->
+            <sch:DefaultPTZSpeed>
+               <!--Optional:-->
+               <sch:PanTilt x="?" y="?" space="?"/>
+               <!--Optional:-->
+               <sch:Zoom x="?" space="?"/>
+            </sch:DefaultPTZSpeed>
+            <!--Optional:-->
+            <!--type: duration-->
+            <sch:DefaultPTZTimeout>?</sch:DefaultPTZTimeout>
+            <!--Optional:-->
+            <sch:PanTiltLimits>
+               <sch:Range>
+                  <!--type: anyURI-->
+                  <sch:URI>?</sch:URI>
+                  <sch:XRange>
+                     <!--type: float-->
+                     <sch:Min>?</sch:Min>
+                     <!--type: float-->
+                     <sch:Max>?</sch:Max>
+                  </sch:XRange>
+                  <sch:YRange>
+                     <!--type: float-->
+                     <sch:Min>?</sch:Min>
+                     <!--type: float-->
+                     <sch:Max>?</sch:Max>
+                  </sch:YRange>
+               </sch:Range>
+            </sch:PanTiltLimits>
+            <!--Optional:-->
+            <sch:ZoomLimits>
+               <sch:Range>
+                  <!--type: anyURI-->
+                  <sch:URI>?</sch:URI>
+                  <sch:XRange>
+                     <!--type: float-->
+                     <sch:Min>?</sch:Min>
+                     <!--type: float-->
+                     <sch:Max>?</sch:Max>
+                  </sch:XRange>
+               </sch:Range>
+            </sch:ZoomLimits>
+            <!--Optional:-->
+            <sch:Extension>
+               <!--You may enter ANY elements at this point-->
+               <!--Optional:-->
+               <sch:PTControlDirection>
+                  <!--Optional:-->
+                  <sch:EFlip>
+                     <!--type: EFlipMode - enumeration: [OFF,ON,Extended]-->
+                     <sch:Mode>?</sch:Mode>
+                     <!--You may enter ANY elements at this point-->
+                  </sch:EFlip>
+                  <!--Optional:-->
+                  <sch:Reverse>
+                     <!--type: ReverseMode - enumeration: [OFF,ON,AUTO,Extended]-->
+                     <sch:Mode>?</sch:Mode>
+                     <!--You may enter ANY elements at this point-->
+                  </sch:Reverse>
+                  <!--Optional:-->
+                  <sch:Extension>
+                     <!--You may enter ANY elements at this point-->
+                  </sch:Extension>
+               </sch:PTControlDirection>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:Extension>
+         </wsdl:PTZConfiguration>
+         <!--type: boolean-->
+         <wsdl:ForcePersistence>?</wsdl:ForcePersistence>
+      </wsdl:SetConfiguration>
+   </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,10 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:GetCapabilities>
+         <!--Zero or more repetitions:-->
+         <!--type: CapabilityCategory - enumeration: [All,Analytics,Device,Events,Imaging,Media,PTZ]-->
+         <wsdl:Category>?</wsdl:Category>
+      </wsdl:GetCapabilities>
+   </soap:Body>
+</soap:Envelope>

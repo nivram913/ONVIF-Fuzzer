@@ -1,0 +1,13 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/accesscontrol/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:GetAccessPointInfoList>
+         <!--Optional:-->
+         <!--type: int-->
+         <wsdl:Limit>?</wsdl:Limit>
+         <!--Optional:-->
+         <!--type: string-->
+         <wsdl:StartReference>?</wsdl:StartReference>
+      </wsdl:GetAccessPointInfoList>
+   </soap:Body>
+</soap:Envelope>

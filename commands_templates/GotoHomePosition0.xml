@@ -1,0 +1,16 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver20/ptz/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:GotoHomePosition>
+         <!--type: ReferenceToken-->
+         <wsdl:ProfileToken>?</wsdl:ProfileToken>
+         <!--Optional:-->
+         <wsdl:Speed>
+            <!--Optional:-->
+            <sch:PanTilt x="?" y="?" space="?"/>
+            <!--Optional:-->
+            <sch:Zoom x="?" space="?"/>
+         </wsdl:Speed>
+      </wsdl:GotoHomePosition>
+   </soap:Body>
+</soap:Envelope>

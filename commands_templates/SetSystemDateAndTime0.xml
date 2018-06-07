@@ -1,0 +1,35 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetSystemDateAndTime>
+         <!--type: SetDateTimeType - enumeration: [Manual,NTP]-->
+         <wsdl:DateTimeType>?</wsdl:DateTimeType>
+         <!--type: boolean-->
+         <wsdl:DaylightSavings>?</wsdl:DaylightSavings>
+         <!--Optional:-->
+         <wsdl:TimeZone>
+            <!--type: token-->
+            <sch:TZ>?</sch:TZ>
+         </wsdl:TimeZone>
+         <!--Optional:-->
+         <wsdl:UTCDateTime>
+            <sch:Time>
+               <!--type: int-->
+               <sch:Hour>?</sch:Hour>
+               <!--type: int-->
+               <sch:Minute>?</sch:Minute>
+               <!--type: int-->
+               <sch:Second>?</sch:Second>
+            </sch:Time>
+            <sch:Date>
+               <!--type: int-->
+               <sch:Year>?</sch:Year>
+               <!--type: int-->
+               <sch:Month>?</sch:Month>
+               <!--type: int-->
+               <sch:Day>?</sch:Day>
+            </sch:Date>
+         </wsdl:UTCDateTime>
+      </wsdl:SetSystemDateAndTime>
+   </soap:Body>
+</soap:Envelope>

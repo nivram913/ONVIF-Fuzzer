@@ -1,0 +1,9 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetSystemFactoryDefault>
+         <!--type: FactoryDefaultType - enumeration: [Hard,Soft]-->
+         <wsdl:FactoryDefault>?</wsdl:FactoryDefault>
+      </wsdl:SetSystemFactoryDefault>
+   </soap:Body>
+</soap:Envelope>

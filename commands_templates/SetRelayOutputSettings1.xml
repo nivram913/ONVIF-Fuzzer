@@ -1,0 +1,17 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetRelayOutputSettings>
+         <!--type: ReferenceToken-->
+         <wsdl:RelayOutputToken>?</wsdl:RelayOutputToken>
+         <wsdl:Properties>
+            <!--type: RelayMode - enumeration: [Monostable,Bistable]-->
+            <sch:Mode>?</sch:Mode>
+            <!--type: duration-->
+            <sch:DelayTime>?</sch:DelayTime>
+            <!--type: RelayIdleState - enumeration: [closed,open]-->
+            <sch:IdleState>?</sch:IdleState>
+         </wsdl:Properties>
+      </wsdl:SetRelayOutputSettings>
+   </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,18 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetRemoteUser>
+         <!--Optional:-->
+         <wsdl:RemoteUser>
+            <!--type: string-->
+            <sch:Username>?</sch:Username>
+            <!--Optional:-->
+            <!--type: string-->
+            <sch:Password>?</sch:Password>
+            <!--type: boolean-->
+            <sch:UseDerivedPassword>?</sch:UseDerivedPassword>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:RemoteUser>
+      </wsdl:SetRemoteUser>
+   </soap:Body>
+</soap:Envelope>

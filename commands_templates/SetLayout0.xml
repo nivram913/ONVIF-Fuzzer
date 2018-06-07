@@ -1,0 +1,23 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/display/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetLayout>
+         <!--type: ReferenceToken-->
+         <wsdl:VideoOutput>?</wsdl:VideoOutput>
+         <wsdl:Layout>
+            <!--1 or more repetitions:-->
+            <sch:PaneLayout>
+               <!--type: ReferenceToken-->
+               <sch:Pane>?</sch:Pane>
+               <sch:Area bottom="?" top="?" right="?" left="?"/>
+               <!--You may enter ANY elements at this point-->
+            </sch:PaneLayout>
+            <!--Optional:-->
+            <sch:Extension>
+               <!--You may enter ANY elements at this point-->
+            </sch:Extension>
+         </wsdl:Layout>
+         <!--You may enter ANY elements at this point-->
+      </wsdl:SetLayout>
+   </soap:Body>
+</soap:Envelope>

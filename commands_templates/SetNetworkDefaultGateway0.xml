@@ -1,0 +1,13 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetNetworkDefaultGateway>
+         <!--Zero or more repetitions:-->
+         <!--type: IPv4Address-->
+         <wsdl:IPv4Address>?</wsdl:IPv4Address>
+         <!--Zero or more repetitions:-->
+         <!--type: IPv6Address-->
+         <wsdl:IPv6Address>?</wsdl:IPv6Address>
+      </wsdl:SetNetworkDefaultGateway>
+   </soap:Body>
+</soap:Envelope>

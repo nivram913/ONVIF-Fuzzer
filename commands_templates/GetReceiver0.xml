@@ -1,0 +1,9 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/receiver/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:GetReceiver>
+         <!--type: ReferenceToken-->
+         <wsdl:ReceiverToken>?</wsdl:ReceiverToken>
+      </wsdl:GetReceiver>
+   </soap:Body>
+</soap:Envelope>

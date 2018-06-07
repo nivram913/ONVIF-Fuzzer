@@ -1,0 +1,15 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetDynamicDNS>
+         <!--type: DynamicDNSType - enumeration: [NoUpdate,ClientUpdates,ServerUpdates]-->
+         <wsdl:Type>?</wsdl:Type>
+         <!--Optional:-->
+         <!--type: DNSName-->
+         <wsdl:Name>?</wsdl:Name>
+         <!--Optional:-->
+         <!--type: duration-->
+         <wsdl:TTL>?</wsdl:TTL>
+      </wsdl:SetDynamicDNS>
+   </soap:Body>
+</soap:Envelope>

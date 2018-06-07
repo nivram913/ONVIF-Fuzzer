@@ -1,0 +1,22 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema" xmlns:xm="http://www.w3.org/2005/05/xmlmime">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:LoadCertificateWithPrivateKey>
+         <!--1 or more repetitions:-->
+         <wsdl:CertificateWithPrivateKey>
+            <!--Optional:-->
+            <!--type: token-->
+            <sch:CertificateID>?</sch:CertificateID>
+            <sch:Certificate xm:contentType="application/?">
+               <!--type: base64Binary-->
+               <sch:Data>cid:518186242486</sch:Data>
+            </sch:Certificate>
+            <sch:PrivateKey xm:contentType="application/?">
+               <!--type: base64Binary-->
+               <sch:Data>cid:1388232330652</sch:Data>
+            </sch:PrivateKey>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:CertificateWithPrivateKey>
+      </wsdl:LoadCertificateWithPrivateKey>
+   </soap:Body>
+</soap:Envelope>

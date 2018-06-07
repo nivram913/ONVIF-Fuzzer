@@ -1,0 +1,12 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/media/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:CreateProfile>
+         <!--type: Name-->
+         <wsdl:Name>?</wsdl:Name>
+         <!--Optional:-->
+         <!--type: ReferenceToken-->
+         <wsdl:Token>?</wsdl:Token>
+      </wsdl:CreateProfile>
+   </soap:Body>
+</soap:Envelope>

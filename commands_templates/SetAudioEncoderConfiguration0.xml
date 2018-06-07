@@ -1,0 +1,43 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/media/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetAudioEncoderConfiguration>
+         <wsdl:Configuration token="?">
+            <!--type: Name-->
+            <sch:Name>?</sch:Name>
+            <!--type: int-->
+            <sch:UseCount>?</sch:UseCount>
+            <!--type: AudioEncoding - enumeration: [G711,G726,AAC]-->
+            <sch:Encoding>?</sch:Encoding>
+            <!--type: int-->
+            <sch:Bitrate>?</sch:Bitrate>
+            <!--type: int-->
+            <sch:SampleRate>?</sch:SampleRate>
+            <sch:Multicast>
+               <sch:Address>
+                  <!--type: IPType - enumeration: [IPv4,IPv6]-->
+                  <sch:Type>?</sch:Type>
+                  <!--Optional:-->
+                  <!--type: IPv4Address-->
+                  <sch:IPv4Address>?</sch:IPv4Address>
+                  <!--Optional:-->
+                  <!--type: IPv6Address-->
+                  <sch:IPv6Address>?</sch:IPv6Address>
+               </sch:Address>
+               <!--type: int-->
+               <sch:Port>?</sch:Port>
+               <!--type: int-->
+               <sch:TTL>?</sch:TTL>
+               <!--type: boolean-->
+               <sch:AutoStart>?</sch:AutoStart>
+               <!--You may enter ANY elements at this point-->
+            </sch:Multicast>
+            <!--type: duration-->
+            <sch:SessionTimeout>?</sch:SessionTimeout>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:Configuration>
+         <!--type: boolean-->
+         <wsdl:ForcePersistence>?</wsdl:ForcePersistence>
+      </wsdl:SetAudioEncoderConfiguration>
+   </soap:Body>
+</soap:Envelope>

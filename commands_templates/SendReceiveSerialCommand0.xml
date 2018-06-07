@@ -1,0 +1,24 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/deviceIO/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SendReceiveSerialCommand>
+         <!--Optional:-->
+         <wsdl:SerialData>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--type: base64Binary-->
+            <wsdl:Binary>cid:670529194777</wsdl:Binary>
+            <!--type: string-->
+            <wsdl:String>?</wsdl:String>
+         </wsdl:SerialData>
+         <!--Optional:-->
+         <!--type: duration-->
+         <wsdl:TimeOut>?</wsdl:TimeOut>
+         <!--Optional:-->
+         <!--type: integer-->
+         <wsdl:DataLength>?</wsdl:DataLength>
+         <!--Optional:-->
+         <!--type: string-->
+         <wsdl:Delimiter>?</wsdl:Delimiter>
+      </wsdl:SendReceiveSerialCommand>
+   </soap:Body>
+</soap:Envelope>

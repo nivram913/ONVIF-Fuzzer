@@ -1,0 +1,13 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/network/wsdl" xmlns:dis="http://schemas.xmlsoap.org/ws/2005/04/discovery">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:Probe>
+         <!--Optional:-->
+         <!--type: QNameListType-->
+         <dis:Types>?</dis:Types>
+         <!--Optional:-->
+         <dis:Scopes MatchBy="?">?</dis:Scopes>
+         <!--You may enter ANY elements at this point-->
+      </wsdl:Probe>
+   </soap:Body>
+</soap:Envelope>

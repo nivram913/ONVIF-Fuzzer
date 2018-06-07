@@ -1,0 +1,6 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/actionengine/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:GetActionTriggers/>
+   </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,29 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:AddIPAddressFilter>
+         <wsdl:IPAddressFilter>
+            <!--type: IPAddressFilterType - enumeration: [Allow,Deny]-->
+            <sch:Type>?</sch:Type>
+            <!--Zero or more repetitions:-->
+            <sch:IPv4Address>
+               <!--type: IPv4Address-->
+               <sch:Address>?</sch:Address>
+               <!--type: int-->
+               <sch:PrefixLength>?</sch:PrefixLength>
+            </sch:IPv4Address>
+            <!--Zero or more repetitions:-->
+            <sch:IPv6Address>
+               <!--type: IPv6Address-->
+               <sch:Address>?</sch:Address>
+               <!--type: int-->
+               <sch:PrefixLength>?</sch:PrefixLength>
+            </sch:IPv6Address>
+            <!--Optional:-->
+            <sch:Extension>
+               <!--You may enter ANY elements at this point-->
+            </sch:Extension>
+         </wsdl:IPAddressFilter>
+      </wsdl:AddIPAddressFilter>
+   </soap:Body>
+</soap:Envelope>

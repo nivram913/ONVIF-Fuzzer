@@ -1,0 +1,31 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/actionengine/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:ModifyActionTriggers>
+         <!--1 or more repetitions:-->
+         <wsdl:ActionTrigger Token="?">
+            <wsdl:Configuration>
+               <wsdl:TopicExpression Dialect="?">
+                  e
+                  <!--You may enter ANY elements at this point-->
+                  gero
+               </wsdl:TopicExpression>
+               <!--Optional:-->
+               <wsdl:ContentExpression Dialect="?">
+                  cum
+                  <!--You may enter ANY elements at this point-->
+                  sonoras
+               </wsdl:ContentExpression>
+               <!--Zero or more repetitions:-->
+               <!--type: ReferenceToken-->
+               <wsdl:ActionToken>?</wsdl:ActionToken>
+               <!--Optional:-->
+               <wsdl:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </wsdl:Extension>
+            </wsdl:Configuration>
+            <!--You may enter ANY elements at this point-->
+         </wsdl:ActionTrigger>
+      </wsdl:ModifyActionTriggers>
+   </soap:Body>
+</soap:Envelope>

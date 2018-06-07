@@ -1,0 +1,111 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver20/ptz/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:ModifyPresetTour>
+         <!--type: ReferenceToken-->
+         <wsdl:ProfileToken>?</wsdl:ProfileToken>
+         <wsdl:PresetTour token="?">
+            <!--Optional:-->
+            <!--type: Name-->
+            <sch:Name>?</sch:Name>
+            <sch:Status>
+               <!--type: PTZPresetTourState - enumeration: [Idle,Touring,Paused,Extended]-->
+               <sch:State>?</sch:State>
+               <!--Optional:-->
+               <sch:CurrentTourSpot>
+                  <sch:PresetDetail>
+                     <!--You have a CHOICE of the next 4 items at this level-->
+                     <!--type: ReferenceToken-->
+                     <sch:PresetToken>?</sch:PresetToken>
+                     <!--type: boolean-->
+                     <sch:Home>?</sch:Home>
+                     <sch:PTZPosition>
+                        <!--Optional:-->
+                        <sch:PanTilt x="?" y="?" space="?"/>
+                        <!--Optional:-->
+                        <sch:Zoom x="?" space="?"/>
+                     </sch:PTZPosition>
+                     <sch:TypeExtension>
+                        <!--You may enter ANY elements at this point-->
+                     </sch:TypeExtension>
+                     <!--You may enter ANY elements at this point-->
+                  </sch:PresetDetail>
+                  <!--Optional:-->
+                  <sch:Speed>
+                     <!--Optional:-->
+                     <sch:PanTilt x="?" y="?" space="?"/>
+                     <!--Optional:-->
+                     <sch:Zoom x="?" space="?"/>
+                  </sch:Speed>
+                  <!--Optional:-->
+                  <!--type: duration-->
+                  <sch:StayTime>?</sch:StayTime>
+                  <!--Optional:-->
+                  <sch:Extension>
+                     <!--You may enter ANY elements at this point-->
+                  </sch:Extension>
+               </sch:CurrentTourSpot>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:Status>
+            <!--type: boolean-->
+            <sch:AutoStart>?</sch:AutoStart>
+            <sch:StartingCondition>
+               <!--Optional:-->
+               <!--type: int-->
+               <sch:RecurringTime>?</sch:RecurringTime>
+               <!--Optional:-->
+               <!--type: duration-->
+               <sch:RecurringDuration>?</sch:RecurringDuration>
+               <!--Optional:-->
+               <!--type: PTZPresetTourDirection - enumeration: [Forward,Backward,Extended]-->
+               <sch:Direction>?</sch:Direction>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:StartingCondition>
+            <!--Zero or more repetitions:-->
+            <sch:TourSpot>
+               <sch:PresetDetail>
+                  <!--You have a CHOICE of the next 4 items at this level-->
+                  <!--type: ReferenceToken-->
+                  <sch:PresetToken>?</sch:PresetToken>
+                  <!--type: boolean-->
+                  <sch:Home>?</sch:Home>
+                  <sch:PTZPosition>
+                     <!--Optional:-->
+                     <sch:PanTilt x="?" y="?" space="?"/>
+                     <!--Optional:-->
+                     <sch:Zoom x="?" space="?"/>
+                  </sch:PTZPosition>
+                  <sch:TypeExtension>
+                     <!--You may enter ANY elements at this point-->
+                  </sch:TypeExtension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:PresetDetail>
+               <!--Optional:-->
+               <sch:Speed>
+                  <!--Optional:-->
+                  <sch:PanTilt x="?" y="?" space="?"/>
+                  <!--Optional:-->
+                  <sch:Zoom x="?" space="?"/>
+               </sch:Speed>
+               <!--Optional:-->
+               <!--type: duration-->
+               <sch:StayTime>?</sch:StayTime>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:TourSpot>
+            <!--Optional:-->
+            <sch:Extension>
+               <!--You may enter ANY elements at this point-->
+            </sch:Extension>
+         </wsdl:PresetTour>
+      </wsdl:ModifyPresetTour>
+   </soap:Body>
+</soap:Envelope>

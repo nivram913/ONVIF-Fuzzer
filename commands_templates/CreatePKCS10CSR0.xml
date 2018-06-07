@@ -1,0 +1,111 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/advancedsecurity/wsdl">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:CreatePKCS10CSR>
+         <wsdl:Subject>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:Country>?</wsdl:Country>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:Organization>?</wsdl:Organization>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:OrganizationalUnit>?</wsdl:OrganizationalUnit>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:DistinguishedNameQualifier>?</wsdl:DistinguishedNameQualifier>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:StateOrProvinceName>?</wsdl:StateOrProvinceName>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:CommonName>?</wsdl:CommonName>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:SerialNumber>?</wsdl:SerialNumber>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:Locality>?</wsdl:Locality>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:Title>?</wsdl:Title>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:Surname>?</wsdl:Surname>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:GivenName>?</wsdl:GivenName>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:Initials>?</wsdl:Initials>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:Pseudonym>?</wsdl:Pseudonym>
+            <!--Zero or more repetitions:-->
+            <!--type: DNAttributeValue-->
+            <wsdl:GenerationQualifier>?</wsdl:GenerationQualifier>
+            <!--Zero or more repetitions:-->
+            <wsdl:GenericAttribute>
+               <!--type: DNAttributeType-->
+               <wsdl:Type>?</wsdl:Type>
+               <!--type: DNAttributeValue-->
+               <wsdl:Value>?</wsdl:Value>
+               <!--You may enter ANY elements at this point-->
+            </wsdl:GenericAttribute>
+            <!--Zero or more repetitions:-->
+            <wsdl:MultiValuedRDN>
+               <!--Zero or more repetitions:-->
+               <wsdl:Attribute>
+                  <!--type: DNAttributeType-->
+                  <wsdl:Type>?</wsdl:Type>
+                  <!--type: DNAttributeValue-->
+                  <wsdl:Value>?</wsdl:Value>
+                  <!--You may enter ANY elements at this point-->
+               </wsdl:Attribute>
+            </wsdl:MultiValuedRDN>
+            <!--Optional:-->
+            <wsdl:anyAttribute>
+               <!--You may enter ANY elements at this point-->
+            </wsdl:anyAttribute>
+         </wsdl:Subject>
+         <!--type: KeyID-->
+         <wsdl:KeyID>?</wsdl:KeyID>
+         <!--Zero or more repetitions:-->
+         <wsdl:CSRAttribute>
+            <!--You have a CHOICE of the next 3 items at this level-->
+            <wsdl:X509v3Extension>
+               <!--type: DotDecimalOID-->
+               <wsdl:extnOID>?</wsdl:extnOID>
+               <!--type: boolean-->
+               <wsdl:critical>false</wsdl:critical>
+               <!--type: Base64DERencodedASN1Value-->
+               <wsdl:extnValue>cid:669542526116</wsdl:extnValue>
+               <!--You may enter ANY elements at this point-->
+            </wsdl:X509v3Extension>
+            <wsdl:BasicRequestAttribute>
+               <!--type: DotDecimalOID-->
+               <wsdl:OID>?</wsdl:OID>
+               <!--type: Base64DERencodedASN1Value-->
+               <wsdl:value>cid:986861953114</wsdl:value>
+               <!--You may enter ANY elements at this point-->
+            </wsdl:BasicRequestAttribute>
+            <!--Optional:-->
+            <wsdl:anyAttribute>
+               <!--You may enter ANY elements at this point-->
+            </wsdl:anyAttribute>
+         </wsdl:CSRAttribute>
+         <wsdl:SignatureAlgorithm>
+            <!--type: DotDecimalOID-->
+            <wsdl:algorithm>?</wsdl:algorithm>
+            <!--Optional:-->
+            <!--type: Base64DERencodedASN1Value-->
+            <wsdl:parameters>cid:1016410979451</wsdl:parameters>
+            <!--Optional:-->
+            <wsdl:anyParameters>
+               <!--You may enter ANY elements at this point-->
+            </wsdl:anyParameters>
+         </wsdl:SignatureAlgorithm>
+      </wsdl:CreatePKCS10CSR>
+   </soap:Body>
+</soap:Envelope>

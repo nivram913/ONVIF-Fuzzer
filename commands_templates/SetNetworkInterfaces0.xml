@@ -1,0 +1,112 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdl="http://www.onvif.org/ver10/device/wsdl" xmlns:sch="http://www.onvif.org/ver10/schema">
+   <soap:Header/>
+   <soap:Body>
+      <wsdl:SetNetworkInterfaces>
+         <!--type: ReferenceToken-->
+         <wsdl:InterfaceToken>?</wsdl:InterfaceToken>
+         <wsdl:NetworkInterface>
+            <!--Optional:-->
+            <!--type: boolean-->
+            <sch:Enabled>?</sch:Enabled>
+            <!--Optional:-->
+            <sch:Link>
+               <!--type: boolean-->
+               <sch:AutoNegotiation>?</sch:AutoNegotiation>
+               <!--type: int-->
+               <sch:Speed>?</sch:Speed>
+               <!--type: Duplex - enumeration: [Full,Half]-->
+               <sch:Duplex>?</sch:Duplex>
+            </sch:Link>
+            <!--Optional:-->
+            <!--type: int-->
+            <sch:MTU>?</sch:MTU>
+            <!--Optional:-->
+            <sch:IPv4>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <sch:Enabled>?</sch:Enabled>
+               <!--Zero or more repetitions:-->
+               <sch:Manual>
+                  <!--type: IPv4Address-->
+                  <sch:Address>?</sch:Address>
+                  <!--type: int-->
+                  <sch:PrefixLength>?</sch:PrefixLength>
+               </sch:Manual>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <sch:DHCP>?</sch:DHCP>
+            </sch:IPv4>
+            <!--Optional:-->
+            <sch:IPv6>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <sch:Enabled>?</sch:Enabled>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <sch:AcceptRouterAdvert>?</sch:AcceptRouterAdvert>
+               <!--Zero or more repetitions:-->
+               <sch:Manual>
+                  <!--type: IPv6Address-->
+                  <sch:Address>?</sch:Address>
+                  <!--type: int-->
+                  <sch:PrefixLength>?</sch:PrefixLength>
+               </sch:Manual>
+               <!--Optional:-->
+               <!--type: IPv6DHCPConfiguration - enumeration: [Auto,Stateful,Stateless,Off]-->
+               <sch:DHCP>?</sch:DHCP>
+            </sch:IPv6>
+            <!--Optional:-->
+            <sch:Extension>
+               <!--You may enter ANY elements at this point-->
+               <!--Zero or more repetitions:-->
+               <sch:Dot3>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Dot3>
+               <!--Zero or more repetitions:-->
+               <sch:Dot11>
+                  <!--type: Dot11SSIDType-->
+                  <sch:SSID>cid:818556559986</sch:SSID>
+                  <!--type: Dot11StationMode - enumeration: [Ad-hoc,Infrastructure,Extended]-->
+                  <sch:Mode>?</sch:Mode>
+                  <!--type: Name-->
+                  <sch:Alias>?</sch:Alias>
+                  <!--type: NetworkInterfaceConfigPriority-->
+                  <sch:Priority>?</sch:Priority>
+                  <sch:Security>
+                     <!--type: Dot11SecurityMode - enumeration: [None,WEP,PSK,Dot1X,Extended]-->
+                     <sch:Mode>?</sch:Mode>
+                     <!--Optional:-->
+                     <!--type: Dot11Cipher - enumeration: [CCMP,TKIP,Any,Extended]-->
+                     <sch:Algorithm>?</sch:Algorithm>
+                     <!--Optional:-->
+                     <sch:PSK>
+                        <!--Optional:-->
+                        <!--type: Dot11PSK-->
+                        <sch:Key>cid:517208717192</sch:Key>
+                        <!--Optional:-->
+                        <!--type: Dot11PSKPassphrase-->
+                        <sch:Passphrase>?</sch:Passphrase>
+                        <!--Optional:-->
+                        <sch:Extension>
+                           <!--You may enter ANY elements at this point-->
+                        </sch:Extension>
+                     </sch:PSK>
+                     <!--Optional:-->
+                     <!--type: ReferenceToken-->
+                     <sch:Dot1X>?</sch:Dot1X>
+                     <!--Optional:-->
+                     <sch:Extension>
+                        <!--You may enter ANY elements at this point-->
+                     </sch:Extension>
+                  </sch:Security>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Dot11>
+               <!--Optional:-->
+               <sch:Extension>
+                  <!--You may enter ANY elements at this point-->
+               </sch:Extension>
+            </sch:Extension>
+         </wsdl:NetworkInterface>
+      </wsdl:SetNetworkInterfaces>
+   </soap:Body>
+</soap:Envelope>
