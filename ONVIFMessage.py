@@ -86,7 +86,7 @@ class ONVIFMessage:
         Return a string of XML representation of the SOAP message
         :return: String
         """
-        return etree.dump(self.tree)
+        return etree.tostring(self.tree.getroot(), encoding='ascii', method='xml')
 
     def get_all_params(self):
         """
