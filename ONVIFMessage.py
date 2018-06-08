@@ -39,6 +39,10 @@ class ONVIFMessage:
         self.tree = etree.parse(file, parser=etree.XMLParser(target=TreeBuilderWithComment()))
         self._parse_message()
 
+    def _guess_type(self, type_name):
+        offset = type_name.find(' - ')
+        return type_name[:offset] if offset != -1 else type_name
+
     def _search_params(self, node):
         if len(node.getchildren()) == 0:
             return
@@ -58,7 +62,7 @@ class ONVIFMessage:
                     number = 0
                     param_name = param_name + str(number)
 
-                self.params[param_name] = CmdParam(node[i].text[6:], node[i + 1])  # TODO: guess type
+                self.params[param_name] = CmdParam(self._guess_type(node[i].text[6:]), node[i + 1])
             elif node[i].text.startswith('1 or more repetitions:'):
                 pass
             elif node[i].text.startswith('Optional:'):
