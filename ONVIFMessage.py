@@ -4,6 +4,9 @@ import xml.etree.ElementTree as etree
 
 
 class TreeBuilderWithComment(etree.TreeBuilder):
+    """
+    Class to parse comment nodes with ElementTree
+    """
     def comment(self, data):
         self.start(etree.Comment, {})
         self.data(data)
@@ -34,23 +37,28 @@ class ONVIFMessage:
         self.name = ''
         self.params = {}
         self.tree = etree.parse(file, parser=etree.XMLParser(target=TreeBuilderWithComment()))
-        self.parse_message()
+        self._parse_message()
 
-    def search_params(self, node):
+    def _search_params(self, node):
         if len(node.getchildren()) == 0:
             return
 
+        # For all children node of 'node'
         for i in range(len(node)):
-            self.search_params(node[i])
+            self._search_params(node[i])
 
             if node[i].text is None:
-                return
+                continue
 
+            # If the node is a comment that indicate the type of the next node which is a parameter
             if node[i].text.startswith('type: '):
                 param_name = node[i + 1].tag[node[i + 1].tag.find('}') + 1:]
-                if param_name in self.params:
-                    print('{} already in params list !'.format(param_name))
-                self.params[param_name] = CmdParam(node[i].text[6:], node[i + 1])
+
+                while param_name in self.params:
+                    number = 0
+                    param_name = param_name + str(number)
+
+                self.params[param_name] = CmdParam(node[i].text[6:], node[i + 1])  # TODO: guess type
             elif node[i].text.startswith('1 or more repetitions:'):
                 pass
             elif node[i].text.startswith('Optional:'):
@@ -62,12 +70,12 @@ class ONVIFMessage:
             elif node[i].text.startswith('Zero or more repetitions:'):
                 pass
 
-    def parse_message(self):
+    def _parse_message(self):
         root_node = self.tree.getroot()
-        command = root_node.find('{http://www.w3.org/2003/05/soap-envelope}Body')[0]
-        self.name = command.tag
+        command_node = root_node.find('{http://www.w3.org/2003/05/soap-envelope}Body')[0]
+        self.name = command_node.tag
 
-        self.search_params(command)
+        self._search_params(command_node)
 
     def get_message(self):
         """
