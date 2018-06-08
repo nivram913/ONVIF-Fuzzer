@@ -8,4 +8,4 @@
 
 ## Description
 
-This tool is for fuzz an ONVIF camera.
+This tool is for fuzz parameters of ONVIF messages.
