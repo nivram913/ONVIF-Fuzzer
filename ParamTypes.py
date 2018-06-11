@@ -1,252 +1,254 @@
 ParamTypes = {
     'AbsoluteOrRelativeTimeType': {
-        'legal_values': []
+        'regex':
+            '([1-9][0-9]{0,3}-[0-1][0-9]-[0-3][0-9]T[0-2][0-9]:[0-5][0-9]:[0-5][0-9](Z|[\+-][0-2][0-9]:[0-5][0-9]))|' +
+            '(P([1-9][0-9]*Y)?([1-9][0-9]*M)?([1-9][0-9]*D)?(T([1-9][0-9]*H)?([1-9][0-9]*M)?([1-9][0-9]*S)?)?)'
     },
     'anyURI': {
-        'legal_values': []
+        'regex': '.*'
     },
     'AudioEncoding': {
-        'legal_values': ['G711', 'G726', 'AAC']
+        'regex': 'G711|G726|AAC'
     },
     'AutoFocusMode': {
-        'legal_values': ['AUTO', 'MANUAL']
+        'regex': 'AUTO|MANUAL'
     },
     'AuxiliaryData': {
-        'legal_values': []
+        'regex': '.{0,128}'
     },
     'BacklightCompensationMode': {
-        'legal_values': ['OFF', 'ON']
+        'regex': 'OFF|ON'
     },
     'base64Binary': {
-        'legal_values': []
+        'regex': '(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?'
     },
     'Base64DERencodedASN1Value': {
-        'legal_values': []
+        'regex': '(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?'
     },
     'boolean': {
-        'legal_values': ['true', 'false']
+        'regex': 'true|false'
     },
     'CapabilityCategory': {
-        'legal_values': ['All', 'Analytics', 'Device', 'Events', 'Imaging', 'Media', 'PTZ']
+        'regex': 'All|Analytics|Device|Events|Imaging|Media|PTZ'
     },
     'CertificateID': {
-        'legal_values': []
+        'regex': '(_|[a-zA-Z])[a-zA-Z0-9_~,]*'
     },
     'CertificationPathID': {
-        'legal_values': []
+        'regex': '(_|[a-zA-Z])[a-zA-Z0-9_~,]*'
     },
     'dateTime': {
-        'legal_values': []
+        'regex': '[1-9][0-9]{0,3}-[0-1][0-9]-[0-3][0-9]T[0-2][0-9]:[0-5][0-9]:[0-5][0-9](Z|[\+-][0-2][0-9]:[0-5][0-9])'
     },
     'Decision': {
-        'legal_values': ['Granted', 'Denied']
+        'regex': 'Granted|Denied'
     },
     'Description': {
-        'legal_values': []
+        'regex': '.{0,1024}'
     },
     'DiscoveryMode': {
-        'legal_values': ['Discoverable', 'NonDiscoverable']
+        'regex': 'Discoverable|NonDiscoverable'
     },
     'DNAttributeType': {
-        'legal_values': []
+        'regex': '[a-zA-Z0-9]*'
     },
     'DNAttributeValue': {
-        'legal_values': []
+        'regex': '[a-zA-Z0-9]*'
     },
     'DNSName': {
-        'legal_values': []
+        'regex': '[a-zA-Z0-9]*'
     },
     'Dot11Cipher': {
-        'legal_values': ['CCMP', 'TKIP', 'Any', 'Extended']
+        'regex': 'CCMP|TKIP|Any|Extended'
     },
     'Dot11PSK': {
-        'legal_values': []
+        'regex': '([0-9][a-fA-F]){0,32}'
     },
     'Dot11PSKPassphrase': {
-        'legal_values': []
+        'regex': '[ -~]{8,63}'
     },
     'Dot11SecurityMode': {
-        'legal_values': ['None', 'WEP', 'PSK', 'Dot1X', 'Extended']
+        'regex': 'None|WEP|PSK|Dot1X|Extended'
     },
     'Dot11SSIDType': {
-        'legal_values': []
+        'regex': '([0-9][a-fA-F]){1,32}'
     },
     'Dot11StationMode': {
-        'legal_values': ['Ad-hoc', 'Infrastructure', 'Extended']
+        'regex': 'Ad-hoc|Infrastructure|Extended'
     },
     'DotDecimalOID': {
-        'legal_values': []
+        'regex': '[0-9]+(.[0-9]+)*'
     },
     'Duplex': {
-        'legal_values': ['Full', 'Half']
+        'regex': 'Full|Half'
     },
     'duration': {
-        'legal_values': []
+        'regex': 'P([1-9][0-9]*Y)?([1-9][0-9]*M)?([1-9][0-9]*D)?(T([1-9][0-9]*H)?([1-9][0-9]*M)?([1-9][0-9]*S)?)?'
     },
     'DynamicDNSType': {
-        'legal_values': ['NoUpdate', 'ClientUpdates', 'ServerUpdates']
+        'regex': 'NoUpdate|ClientUpdates|ServerUpdates'
     },
     'EFlipMode': {
-        'legal_values': ['OFF', 'ON', 'Extended']
+        'regex': 'OFF|ON|Extended'
     },
     'ExposureMode': {
-        'legal_values': ['AUTO', 'MANUAL']
+        'regex': 'AUTO|MANUAL'
     },
     'ExposurePriority': {
-        'legal_values': ['LowNoise', 'FrameRate']
+        'regex': 'LowNoise|FrameRate'
     },
     'FactoryDefaultType': {
-        'legal_values': ['Hard', 'Soft']
+        'regex': 'Hard|Soft'
     },
     'float': {
-        'legal_values': []
+        'regex': '(\+|-)?([0-9]*[.])?[0-9]+'
     },
     'H264Profile': {
-        'legal_values': ['Baseline', 'Main', 'Extended', 'High']
+        'regex': 'Baseline|Main|Extended|High'
     },
     'ImageStabilizationMode': {
-        'legal_values': ['OFF', 'ON', 'AUTO', 'Extended']
+        'regex': 'OFF|ON|AUTO|Extended'
     },
     'int': {
-        'legal_values': []
+        'regex': '(\+|-)?[0-9]+'
     },
     'integer': {
-        'legal_values': []
+        'regex': '(\+|-)?[0-9]+'
     },
     'IPAddressFilterType': {
-        'legal_values': ['Allow', 'Deny']
+        'regex': 'Allow|Deny'
     },
     'IPType': {
-        'legal_values': ['IPv4', 'IPv6']
+        'regex': 'IPv4|IPv6'
     },
     'IPv4Address': {
-        'legal_values': []
+        'regex': '((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])'
     },
     'IPv6Address': {
-        'legal_values': []
+        'regex': '([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}'
     },
     'IPv6DHCPConfiguration': {
-        'legal_values': ['Auto', 'Stateful', 'Stateless', 'Off']
+        'regex': 'Auto|Stateful|Stateless|Off'
     },
     'IrCutFilterMode': {
-        'legal_values': ['ON', 'OFF', 'AUTO']
+        'regex': 'ON|OFF|AUTO'
     },
     'JobToken': {
-        'legal_values': []
+        'regex': '[a-zA-Z0-9 \r\n\t]{0,64}'
     },
     'KeyID': {
-        'legal_values': []
+        'regex': '(_|[a-zA-Z])[a-zA-Z0-9_~,]*'
     },
     'ModeOfOperation': {
-        'legal_values': ['Idle', 'Active', 'Unknown']
+        'regex': 'Idle|Active|Unknown'
     },
     'Mpeg4Profile': {
-        'legal_values': ['SP', 'ASP']
+        'regex': 'SP|ASP'
     },
     'Name': {
-        'legal_values': []
+        'regex': '[a-zA-Z0-9 \r\n\t]{0,64}'
     },
     'NetworkHostType': {
-        'legal_values': ['IPv4', 'IPv6', 'DNS']
+        'regex': 'IPv4|IPv6|DNS'
     },
     'NetworkInterfaceConfigPriority': {
-        'legal_values': []
+        'regex': '([12][0-9])|[0-9]|31'
     },
     'NetworkProtocolType': {
-        'legal_values': ['HTTP', 'HTTPS', 'RTSP']
+        'regex': 'HTTP|HTTPS|RTSP'
     },
     'nonNegativeInteger': {
-        'legal_values': []
+        'regex': '(\+)?[0-9]+'
     },
     'OSDType': {
-        'legal_values': ['Text', 'Image', 'Extended']
+        'regex': 'Text|Image|Extended'
     },
     'ParityBit': {
-        'legal_values': ['None', 'Even', 'Odd', 'Mark', 'Space', 'Extended']
+        'regex': 'None|Even|Odd|Mark|Space|Extended'
     },
     'positiveInteger': {
-        'legal_values': []
+        'regex': '(\+)?[0-9]+'
     },
     'PTZPresetTourDirection': {
-        'legal_values': ['Forward', 'Backward', 'Extended']
+        'regex': 'Forward|Backward|Extended'
     },
     'PTZPresetTourOperation': {
-        'legal_values': ['Start', 'Stop', 'Pause', 'Extended']
+        'regex': 'Start|Stop|Pause|Extended'
     },
     'PTZPresetTourState': {
-        'legal_values': ['Idle', 'Touring', 'Paused', 'Extended']
+        'regex': 'Idle|Touring|Paused|Extended'
     },
     'QNameListType': {
-        'legal_values': []
+        'regex': ''  # ?
     },
     'ReceiverMode': {
-        'legal_values': ['AutoConnect', 'AlwaysConnect', 'NeverConnect', 'Unknown']
+        'regex': 'AutoConnect|AlwaysConnect|NeverConnect|Unknown'
     },
     'RecordingJobMode': {
-        'legal_values': []
+        'regex': '[a-zA-Z0-9 \r\n\t]{0,64}'
     },
     'RecordingJobReference': {
-        'legal_values': []
+        'regex': '[a-zA-Z0-9 \r\n\t]{0,64}'
     },
     'RecordingReference': {
-        'legal_values': []
+        'regex': '[a-zA-Z0-9 \r\n\t]{0,64}'
     },
     'ReferenceToken': {
-        'legal_values': []
+        'regex': '[a-zA-Z0-9 \r\n\t]{0,64}'
     },
     'RelayIdleState': {
-        'legal_values': ['closed', 'open']
+        'regex': 'closed|open'
     },
     'RelayLogicalState': {
-        'legal_values': ['active', 'inactive']
+        'regex': 'active|inactive'
     },
     'RelayMode': {
-        'legal_values': ['Monostable', 'Bistable']
+        'regex': 'Monostable|Bistable'
     },
     'ReverseMode': {
-        'legal_values': ['OFF', 'ON', 'AUTO', 'Extended']
+        'regex': 'OFF|ON|AUTO|Extended'
     },
     'RotateMode': {
-        'legal_values': ['OFF', 'ON', 'AUTO']
+        'regex': 'OFF|ON|AUTO'
     },
     'SetDateTimeType': {
-        'legal_values': ['Manual', 'NTP']
+        'regex': 'Manual|NTP'
     },
     'StreamType': {
-        'legal_values': ['RTP-Unicast', 'RTP-Multicast']
+        'regex': 'RTP-Unicast|RTP-Multicast'
     },
     'string': {
-        'legal_values': []
+        'regex': '[a-zA-Z0-9 \r\n\t]{0,64}'
     },
     'SystemLogType': {
-        'legal_values': ['System', 'Access']
+        'regex': 'System|Access'
     },
     'token': {
-        'legal_values': []
+        'regex': '[a-zA-Z0-9 \r\n\t]{0,64}'
     },
     'TrackReference': {
-        'legal_values': []
+        'regex': '[a-zA-Z0-9 \r\n\t]{0,64}'
     },
     'TrackType': {
-        'legal_values': ['Video', 'Audio', 'Metadata', 'Extended']
+        'regex': 'Video|Audio|Metadata|Extended'
     },
     'TransportProtocol': {
-        'legal_values': ['UDP', 'TCP', 'RTSP', 'HTTP']
+        'regex': 'UDP|TCP|RTSP|HTTP'
     },
     'UserLevel': {
-        'legal_values': ['Administrator', 'Operator', 'User', 'Anonymous', 'Extended']
+        'regex': 'Administrator|Operator|User|Anonymous|Extended'
     },
     'VideoEncoding': {
-        'legal_values': ['JPEG', 'MPEG4', 'H264']
+        'regex': 'JPEG|MPEG4|H264'
     },
     'WhiteBalanceMode': {
-        'legal_values': ['AUTO', 'MANUAL']
+        'regex': 'AUTO|MANUAL'
     },
     'WideDynamicMode': {
-        'legal_values': ['OFF', 'ON']
+        'regex': 'OFF|ON'
     },
     'XPathExpression': {
-        'legal_values': []
+        'regex': '[a-zA-Z0-9 \r\n\t]{0,64}'
     }
 }
 
