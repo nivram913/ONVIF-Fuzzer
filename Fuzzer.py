@@ -4,6 +4,7 @@ import re
 import requests
 from requests.auth import HTTPDigestAuth
 from ParamTypes import ParamTypes
+from xeger import Xeger
 
 from ONVIFMessage import ONVIFMessage
 
@@ -26,7 +27,23 @@ def init_all_params(message):
     :return: None
     """
     for p in message.get_all_params():
-        message.set_param(p, ParamTypes[message.params[p].type]['legal_values'][0])
+        message.set_param(p, ParamTypes[message.params[p].type]['default'][0])
+
+
+def generate_payloads(type_param, n_pseudo=20, n_random=20):
+    """
+    Generate pseudo random payloads from regex from parameter type, totally random string and known payloads
+    :param type_param: Type of parameter
+    :param n_pseudo: Number of pseudo random payloads
+    :param n_random: Number of random payloads
+    :return: An array of strings containing payloads
+    """
+    x = Xeger(limit=50)
+
+    # Pseudo random payloads
+    payloads = [x.xeger(ParamTypes[type_param]['regex']) for i in range(n_pseudo)]
+
+    return payloads
 
 
 def fuzz_param(message, param):
@@ -40,18 +57,19 @@ def fuzz_param(message, param):
 
     init_all_params(message)
 
-    payloads = []
+    payloads = generate_payloads(message.params[param].type)
 
     for payload in payloads:
         message.set_param(param, payload)
         rsp = requests.post('http://{host}:{port}{url}'.format(host=args['host'], port=args['port'], url=args['url']),
-                            message.get_message(), auth=HTTPDigestAuth('admin', 'Aveiro35'))
+                            message.get_message(), auth=HTTPDigestAuth(args['user'], args['password']))
         analyse_response(rsp)
 
 
 if __name__ == "__main__":
     def usage():
-        sys.stderr.write('Usage: {} <template file> <ip address> [-p <port>] <service url>'.format(sys.argv[0]))
+        sys.stderr.write('Usage: {} <template file> <ip address> [-p <port>] <service url> <user> <password>'
+                         .format(sys.argv[0]))
         sys.exit(1)
 
     def validate_template_file(arg):
@@ -84,7 +102,7 @@ if __name__ == "__main__":
             usage()
         return arg
 
-    if len(sys.argv) != 4 and len(sys.argv) != 5:
+    if len(sys.argv) != 6 and len(sys.argv) != 7:
         usage()
 
     args['template'] = validate_template_file(sys.argv.pop(1))
@@ -94,6 +112,8 @@ if __name__ == "__main__":
     else:
         args['port'] = 80
     args['url'] = validate_service_url(sys.argv.pop(1))
+    args['user'] = sys.argv.pop(1)
+    args['password'] = sys.argv.pop(1)
 
     message = ONVIFMessage(args['template'])
     for param in message.get_all_params():

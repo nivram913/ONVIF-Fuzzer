@@ -5,6 +5,7 @@
 ## Requirements
 
 - requests >= 2.18.4
+- xeger >= 0.3.3
 
 ## Description
 
