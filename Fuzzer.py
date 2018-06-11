@@ -9,6 +9,7 @@ from xeger import Xeger
 from ONVIFMessage import ONVIFMessage
 
 args = {}
+known_payloads = []
 
 
 def analyse_response(rsp):
@@ -18,6 +19,31 @@ def analyse_response(rsp):
     :return:
     """
     print(rsp.content.decode('ascii'))
+
+
+def load_default_values(file):
+    """
+    Load default parameter value in ParamTypes from the file in the form:
+    <type>=<default value>
+    :param file: File containing default value
+    :return: None
+    """
+    with open(file, 'r') as f:
+        for line in f.readlines():
+            type, value = line.split('=')
+            ParamTypes[type]['default'] = value
+
+
+def load_known_payloads(file):
+    """
+    Load known payloads in known_payloads string array from the file
+    :param file: File containing known payloads (one per line)
+    :return: None
+    """
+    global known_payloads
+
+    with open(file, 'r') as f:
+        known_payloads = f.readlines()
 
 
 def init_all_params(message):
@@ -38,12 +64,14 @@ def generate_payloads(type_param, n_pseudo=20, n_random=20):
     :param n_random: Number of random payloads
     :return: An array of strings containing payloads
     """
+    global known_payloads
+
     x = Xeger(limit=50)
 
     # Pseudo random payloads
     payloads = [x.xeger(ParamTypes[type_param]['regex']) for i in range(n_pseudo)]
 
-    return payloads
+    return payloads.append(known_payloads)
 
 
 def fuzz_param(message, param):
@@ -68,13 +96,13 @@ def fuzz_param(message, param):
 
 if __name__ == "__main__":
     def usage():
-        sys.stderr.write('Usage: {} <template file> <ip address> [-p <port>] <service url> <user> <password>'
-                         .format(sys.argv[0]))
+        sys.stderr.write('Usage: {} <template file> <ip address> [-p <port>] <service url> <user> <password> '
+                         '<default values file> <known payloads file>'.format(sys.argv[0]))
         sys.exit(1)
 
-    def validate_template_file(arg):
+    def validate_file(arg):
         if not os.path.exists(arg):
-            sys.stderr.write("{} doesn't exist".format(sys.argv[1]))
+            sys.stderr.write("{} doesn't exist".format(arg))
             usage()
         else:
             return arg
@@ -102,10 +130,10 @@ if __name__ == "__main__":
             usage()
         return arg
 
-    if len(sys.argv) != 6 and len(sys.argv) != 7:
+    if len(sys.argv) != 8 and len(sys.argv) != 9:
         usage()
 
-    args['template'] = validate_template_file(sys.argv.pop(1))
+    args['template'] = validate_file(sys.argv.pop(1))
     args['host'] = validate_host(sys.argv.pop(1))
     if sys.argv[1] == '-p':
         args['port'] = validate_port(sys.argv.pop(1))
@@ -114,6 +142,8 @@ if __name__ == "__main__":
     args['url'] = validate_service_url(sys.argv.pop(1))
     args['user'] = sys.argv.pop(1)
     args['password'] = sys.argv.pop(1)
+    load_default_values(validate_file(sys.argv.pop(1)))
+    load_known_payloads(validate_file(sys.argv.pop(1)))
 
     message = ONVIFMessage(args['template'])
     for param in message.get_all_params():
