@@ -71,7 +71,10 @@ def generate_payloads(type_param, n_pseudo=20, n_random=20):
     # Pseudo random payloads
     payloads = [x.xeger(ParamTypes[type_param]['regex']) for i in range(n_pseudo)]
 
-    return payloads.append(known_payloads)
+    # Known payloads
+    payloads.append(known_payloads)
+
+    return payloads
 
 
 def fuzz_param(message, param):
