@@ -84,7 +84,8 @@ def generate_payloads(type_param, n_pseudo=20, n_random=20, size_buffer_overflow
     payloads.append('A' * size_buffer_overflow)
 
     # Known payloads
-    payloads.append(known_payloads)
+    for p in known_payloads:
+        payloads.append(p)
 
     return payloads
 
@@ -112,12 +113,12 @@ def fuzz_param(message, param):
 if __name__ == "__main__":
     def usage():
         sys.stderr.write('Usage: {} <template file> <ip address> [-p <port>] <service url> <user> <password> '
-                         '<default values file> <known payloads file>'.format(sys.argv[0]))
+                         '<default values file> <known payloads file>\n'.format(sys.argv[0]))
         sys.exit(1)
 
     def validate_file(arg):
         if not os.path.exists(arg):
-            sys.stderr.write("{} doesn't exist".format(arg))
+            sys.stderr.write("{} doesn't exist\n".format(arg))
             usage()
         else:
             return arg
@@ -127,16 +128,16 @@ if __name__ == "__main__":
         numbers = r.findall(arg)
         if len(numbers) != 4 or int(numbers[0]) == 0 or \
                 any([True if int(n) < 0 or int(n) > 255 else False for n in numbers]):
-            sys.stderr.write('Invalid IP address')
+            sys.stderr.write('Invalid IP address\n')
             usage()
         return arg
 
     def validate_port(arg):
         if not arg.isdecimal():
-            sys.stderr.write('Port must be a number')
+            sys.stderr.write('Port must be a number\n')
             usage()
         if int(arg) > 65535 or int(arg) == 0:
-            sys.stderr.write('Port must be a number between 1 and 65535')
+            sys.stderr.write('Port must be a number between 1 and 65535\n')
             usage()
         return int(arg)
 
