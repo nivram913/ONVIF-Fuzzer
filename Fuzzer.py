@@ -1,6 +1,8 @@
 import os
 import sys
 import re
+import random
+import string
 import requests
 from requests.auth import HTTPDigestAuth
 from ParamTypes import ParamTypes
@@ -70,6 +72,12 @@ def generate_payloads(type_param, n_pseudo=20, n_random=20):
 
     # Pseudo random payloads
     payloads = [x.xeger(ParamTypes[type_param]['regex']) for i in range(n_pseudo)]
+
+    # Random payloads
+    for i in range(n_random):
+        payloads.append(''.join(
+            random.choice(string.ascii_letters + string.digits + string.punctuation + string.whitespace)
+            for j in range(random.randint(5, 50))))
 
     # Known payloads
     payloads.append(known_payloads)
