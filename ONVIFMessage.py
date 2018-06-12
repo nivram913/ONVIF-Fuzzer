@@ -17,9 +17,10 @@ class CmdParam:
     """
     Class that represent a parameter with its type and XML node reference
     """
-    def __init__(self, type, node):
+    def __init__(self, type, node, default):
         self.type = type
         self.node = node
+        self.default = default
 
 
 class ONVIFMessage:
@@ -62,7 +63,7 @@ class ONVIFMessage:
                     number = 0
                     param_name = param_name + str(number)
 
-                self.params[param_name] = CmdParam(self._guess_type(node[i].text[6:]), node[i + 1])
+                self.params[param_name] = CmdParam(self._guess_type(node[i].text[6:]), node[i + 1], node[i + 1].text)
             elif node[i].text.startswith('1 or more repetitions:'):
                 pass
             elif node[i].text.startswith('Optional:'):

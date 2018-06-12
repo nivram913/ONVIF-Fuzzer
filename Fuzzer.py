@@ -23,19 +23,6 @@ def analyse_response(rsp):
     print(rsp.content.decode('ascii'))
 
 
-def load_default_values(file):
-    """
-    Load default parameter value in ParamTypes from the file in the form:
-    <type>=<default value>
-    :param file: File containing default value
-    :return: None
-    """
-    with open(file, 'r') as f:
-        for line in f.readlines():
-            type, value = line.split('=')
-            ParamTypes[type]['default'] = value
-
-
 def load_known_payloads(file):
     """
     Load known payloads in known_payloads string array from the file
@@ -55,7 +42,7 @@ def init_all_params(message):
     :return: None
     """
     for p in message.get_all_params():
-        message.set_param(p, ParamTypes[message.params[p].type]['default'][0])
+        message.set_param(p, message.params[p].default)
 
 
 def generate_payloads(type_param, n_pseudo=20, n_random=20, size_buffer_overflow=1024):
@@ -113,7 +100,7 @@ def fuzz_param(message, param):
 if __name__ == "__main__":
     def usage():
         sys.stderr.write('Usage: {} <template file> <ip address> [-p <port>] <service url> <user> <password> '
-                         '<default values file> <known payloads file>\n'.format(sys.argv[0]))
+                         '<known payloads file>\n'.format(sys.argv[0]))
         sys.exit(1)
 
     def validate_file(arg):
@@ -146,7 +133,7 @@ if __name__ == "__main__":
             usage()
         return arg
 
-    if len(sys.argv) != 8 and len(sys.argv) != 9:
+    if len(sys.argv) != 7 and len(sys.argv) != 8:
         usage()
 
     args['template'] = validate_file(sys.argv.pop(1))
@@ -158,7 +145,6 @@ if __name__ == "__main__":
     args['url'] = validate_service_url(sys.argv.pop(1))
     args['user'] = sys.argv.pop(1)
     args['password'] = sys.argv.pop(1)
-    load_default_values(validate_file(sys.argv.pop(1)))
     load_known_payloads(validate_file(sys.argv.pop(1)))
 
     message = ONVIFMessage(args['template'])
