@@ -58,12 +58,13 @@ def init_all_params(message):
         message.set_param(p, ParamTypes[message.params[p].type]['default'][0])
 
 
-def generate_payloads(type_param, n_pseudo=20, n_random=20):
+def generate_payloads(type_param, n_pseudo=20, n_random=20, size_buffer_overflow=1024):
     """
     Generate pseudo random payloads from regex from parameter type, totally random string and known payloads
     :param type_param: Type of parameter
     :param n_pseudo: Number of pseudo random payloads
     :param n_random: Number of random payloads
+    :param size_buffer_overflow: The size of payload to be send to try a buffer overflow
     :return: An array of strings containing payloads
     """
     global known_payloads
@@ -78,6 +79,9 @@ def generate_payloads(type_param, n_pseudo=20, n_random=20):
         payloads.append(''.join(
             random.choice(string.ascii_letters + string.digits + string.punctuation + string.whitespace)
             for j in range(random.randint(5, 50))))
+
+    # Buffer overflow payload
+    payloads.append('A' * size_buffer_overflow)
 
     # Known payloads
     payloads.append(known_payloads)
