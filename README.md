@@ -16,7 +16,7 @@ This tool is for fuzz parameters of ONVIF messages (IP cameras are targeted righ
 ```
 Fuzzer.py <template file> <ip address> [-p <port>] <service url> <user> <password> <known payloads file>
 ```
-- Template files are included in *commands_templates* directory
+- Template files are included in *commands_templates* directory (these files must be populated with default values with another tool)
 - \<ip address> is the address of an IP camera
 - You can specify a custom destination port with *-p* option
 - The *service url* is the url that handle the ONVIF service (like "/onvif/device_service")
