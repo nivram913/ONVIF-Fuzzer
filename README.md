@@ -14,22 +14,18 @@ This tool is for fuzz parameters of ONVIF messages (IP cameras are targeted righ
 ## Usage
 
 ```
-Fuzzer.py <template file> <ip address> [-p <port>] <service url> <user> <password> <default values file> <known payloads file>
+Fuzzer.py <template file> <ip address> [-p <port>] <service url> <user> <password> <known payloads file>
 ```
 - Template files are included in *commands_templates* directory
 - \<ip address> is the address of an IP camera
 - You can specify a custom destination port with *-p* option
 - The *service url* is the url that handle the ONVIF service (like "/onvif/device_service")
 - You must specify *user* and *password* for authenticate requests (for now, only HTTP Digest is currently in use)
-- Default values file serve to provide default value for parameters that are not fuzzed (**it is recommended to have one default values file per ONVIF command**)
 - You can specify a custom known attacks list file in the last argument
 
-### Form of the default values file
-This file is a list of parameter type followed by a equal sign and the default value:
-```
-ParamType=value
-```
-A template of this file is included as *default_values_skeleton.txt*. You can specify only a subset of all parameter type.
+### Default parameters value in template files
+
+You must specify default parameters value to use in template files by replacing the '?' by its value.
 
 ## TODO
 
