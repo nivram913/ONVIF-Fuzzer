@@ -15,7 +15,7 @@ class TreeBuilderWithComment(etree.TreeBuilder):
 
 class CmdParam:
     """
-    Class that represent a parameter with its type and XML node reference
+    Class that represent a parameter with its type, XML node reference and default value
     """
     def __init__(self, type, node, default):
         self.type = type
@@ -59,6 +59,7 @@ class ONVIFMessage:
             if node[i].text.startswith('type: '):
                 param_name = node[i + 1].tag[node[i + 1].tag.find('}') + 1:]
 
+                # Generate unique name
                 while param_name in self.params:
                     number = 0
                     param_name = param_name + str(number)
@@ -115,11 +116,3 @@ class ONVIFMessage:
             return
 
         self.params[param].node.text = value
-
-
-# test = ONVIFMessage('commands_templates\\SetMetadataConfiguration0.xml')
-# test.get_message()
-# print(test.get_all_params())
-# test.set_param('VideoSourceToken', 'mdr')
-# test.get_message()
-
