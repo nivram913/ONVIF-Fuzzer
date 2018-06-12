@@ -25,7 +25,7 @@ Fuzzer.py <template file> <ip address> [-p <port>] <service url> <user> <passwor
 
 ### Default parameters value in template files
 
-You must specify default parameters value to use in template files by replacing the '?' by its value.
+You must specify default parameters value to use in template files by replacing the '?' by its value. A tool will be released soon to use ONVIF Device Test Tool results file to populate template files.
 
 ## TODO
 
