@@ -32,7 +32,7 @@ class ONVIFMessage:
     """
     def __init__(self, file):
         if not os.path.exists(file):
-            sys.stderr.write("{} doesn't exist".format(file))
+            sys.stderr.write("{} doesn't exist\n".format(file))
             return
 
         self.name = ''
