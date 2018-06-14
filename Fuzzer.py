@@ -133,12 +133,13 @@ if __name__ == "__main__":
             usage()
         return arg
 
-    if len(sys.argv) != 7 and len(sys.argv) != 8:
+    if len(sys.argv) != 7 and len(sys.argv) != 9:
         usage()
 
     args['template'] = validate_file(sys.argv.pop(1))
     args['host'] = validate_host(sys.argv.pop(1))
     if sys.argv[1] == '-p':
+        sys.argv.pop(1)
         args['port'] = validate_port(sys.argv.pop(1))
     else:
         args['port'] = 80
