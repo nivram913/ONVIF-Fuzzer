@@ -14,16 +14,34 @@ args = {}
 known_payloads = []
 
 
-def analyse_response(req, param, rsp, exception):
+def analyse_response(req, param, payload, rsp, exception):
     """
     Analyse the response rsp from the server against the payload in req
     :param req: Request string containing the payload
     :param param: The fuzzed parameter
+    :param payload: The payload used
     :param rsp: Optional Response object
     :param exception: Optional Exception object
     :return: None
     """
-    print(rsp.content.decode('ascii'))
+    if rsp is None:  # Exception during request, server crash ?
+        if type(exception) is requests.exceptions.ConnectionError:
+            print('Server crashes:')
+            print(exception)
+            print(req.decode('ascii'))
+        else:
+            print('Exception during request:')
+            print(exception)
+    else:  # Server response, analyse return code
+        if 400 <= rsp.status_code < 500:  # HTTP code to indicate client error, server detects error: fine
+            print('Client error detected by the server:')
+        elif rsp.status_code >= 500:  # HTTP code to indicate server error, service crash ?
+            print('Server error:')
+        else:  # HTTP code to indicate that request was accepted, good ?
+            print('Request accepted by the server:')
+
+        print(rsp.content.decode('ascii'))
+        print(req.decode('ascii'))
 
 
 def load_known_payloads(file):
@@ -111,7 +129,7 @@ def fuzz_param(message, param):
             rsp = None
             exception = e
         finally:
-            analyse_response(req, param, rsp, exception)
+            analyse_response(req, param, payload, rsp, exception)
 
 
 if __name__ == "__main__":
