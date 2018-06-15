@@ -14,11 +14,14 @@ args = {}
 known_payloads = []
 
 
-def analyse_response(rsp):
+def analyse_response(req, param, rsp, exception):
     """
-
-    :param rsp:
-    :return:
+    Analyse the response rsp from the server against the payload in req
+    :param req: Request string containing the payload
+    :param param: The fuzzed parameter
+    :param rsp: Optional Response object
+    :param exception: Optional Exception object
+    :return: None
     """
     print(rsp.content.decode('ascii'))
 
@@ -45,7 +48,7 @@ def init_all_params(message):
         message.set_param(p, message.params[p].default)
 
 
-def generate_payloads(type_param, n_pseudo=20, n_random=20, size_buffer_overflow=1024):
+def generate_payloads(type_param, n_pseudo=20, n_random=20, size_buffer_overflow=2048):
     """
     Generate pseudo random payloads from regex from parameter type, totally random string and known payloads
     :param type_param: Type of parameter
@@ -56,10 +59,12 @@ def generate_payloads(type_param, n_pseudo=20, n_random=20, size_buffer_overflow
     """
     global known_payloads
 
-    x = Xeger(limit=50)
+    # x = Xeger(limit=50)
 
     # Pseudo random payloads
-    payloads = [x.xeger(ParamTypes[type_param]['regex']) for i in range(n_pseudo)]
+    # payloads = [x.xeger(ParamTypes[type_param]['regex']) for i in range(n_pseudo)]
+
+    payloads = []
 
     # Random payloads
     for i in range(n_random):
@@ -92,9 +97,21 @@ def fuzz_param(message, param):
 
     for payload in payloads:
         message.set_param(param, payload)
-        rsp = requests.post('http://{host}:{port}{url}'.format(host=args['host'], port=args['port'], url=args['url']),
-                            message.get_message(), auth=HTTPDigestAuth(args['user'], args['password']))
-        analyse_response(rsp)
+        req = message.get_message()
+        rsp = None
+        exception = None
+
+        try:
+            rsp = requests.post('http://{host}:{port}{url}'.format(host=args['host'], port=args['port'],
+                                                                   url=args['url']),
+                                req, auth=HTTPDigestAuth(args['user'], args['password']))
+            exception = None
+        except Exception as e:
+            print('DEBUG: Exception caught')
+            rsp = None
+            exception = e
+        finally:
+            analyse_response(req, param, rsp, exception)
 
 
 if __name__ == "__main__":
