@@ -122,7 +122,7 @@ def fuzz_param(message, param):
         try:
             rsp = requests.post('http://{host}:{port}{url}'.format(host=args['host'], port=args['port'],
                                                                    url=args['url']),
-                                req, auth=HTTPDigestAuth(args['user'], args['password']))
+                                req, auth=HTTPDigestAuth(args['user'], args['password']), timeout=30)  # timeout based on ONVIF Device Test Tool
             exception = None
         except Exception as e:
             print('DEBUG: Exception caught')
