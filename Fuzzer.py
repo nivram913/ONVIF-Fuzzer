@@ -27,10 +27,11 @@ def analyse_response(req, param, payload, rsp, exception):
     if rsp is None:  # Exception during request, server crash ?
         if type(exception) is requests.exceptions.ConnectionError:
             print('Server crashes:')
-            print(exception)
             print(req.decode('ascii'))
+            print(exception)
         else:
             print('Exception during request:')
+            print(req.decode('ascii'))
             print(exception)
     else:  # Server response, analyse return code
         if 400 <= rsp.status_code < 500:  # HTTP code to indicate client error, server detects error: fine
@@ -40,8 +41,8 @@ def analyse_response(req, param, payload, rsp, exception):
         else:  # HTTP code to indicate that request was accepted, good ?
             print('Request accepted by the server:')
 
-        print(rsp.content.decode('ascii'))
         print(req.decode('ascii'))
+        print(rsp.content.decode('ascii'))
 
 
 def load_known_payloads(file):
