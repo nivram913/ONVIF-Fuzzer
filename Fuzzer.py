@@ -126,7 +126,6 @@ def fuzz_param(message, param):
                                 req, auth=HTTPDigestAuth(args['user'], args['password']), timeout=30)  # timeout based on ONVIF Device Test Tool
             exception = None
         except Exception as e:
-            print('DEBUG: Exception caught')
             rsp = None
             exception = e
         finally:
