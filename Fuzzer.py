@@ -5,8 +5,6 @@ import random
 import string
 import requests
 from requests.auth import HTTPDigestAuth
-from ParamTypes import ParamTypes
-from xeger import Xeger
 
 from ONVIFMessage import ONVIFMessage
 
@@ -67,13 +65,10 @@ def init_all_params(message):
         message.set_param(p, message.params[p].default)
 
 
-def generate_payloads(type_param, n_pseudo=20, n_random=20, size_buffer_overflow=2048):
+def generate_payloads(n_random=100):
     """
     Generate pseudo random payloads from regex from parameter type, totally random string and known payloads
-    :param type_param: Type of parameter
-    :param n_pseudo: Number of pseudo random payloads
     :param n_random: Number of random payloads
-    :param size_buffer_overflow: The size of payload to be send to try a buffer overflow
     :return: An array of strings containing payloads
     """
     global known_payloads
@@ -91,8 +86,11 @@ def generate_payloads(type_param, n_pseudo=20, n_random=20, size_buffer_overflow
             random.choice(string.ascii_letters + string.digits + string.punctuation + string.whitespace)
             for j in range(random.randint(5, 50))))
 
-    # Buffer overflow payload
-    payloads.append('A' * size_buffer_overflow)
+    # Buffer overflow payloads
+    payloads.append('A' * 1025)
+    payloads.append('A' * 2049)
+    payloads.append('A' * 4097)
+    payloads.append('A' * 8193)
 
     # Known payloads
     for p in known_payloads:
@@ -112,7 +110,7 @@ def fuzz_param(message, param):
 
     init_all_params(message)
 
-    payloads = generate_payloads(message.params[param].type)
+    payloads = generate_payloads(args['count'])
 
     for payload in payloads:
         message.set_param(param, payload)
@@ -135,7 +133,7 @@ def fuzz_param(message, param):
 if __name__ == "__main__":
     def usage():
         sys.stderr.write('Usage: {} <template file> <ip address> [-p <port>] <service url> <user> <password> '
-                         '<known payloads file>\n'.format(sys.argv[0]))
+                         '<known payloads file> <payload count per parameter>\n'.format(sys.argv[0]))
         sys.exit(1)
 
     def validate_file(arg):
@@ -168,7 +166,7 @@ if __name__ == "__main__":
             usage()
         return arg
 
-    if len(sys.argv) != 7 and len(sys.argv) != 9:
+    if len(sys.argv) != 8 and len(sys.argv) != 10:
         usage()
 
     args['template'] = validate_file(sys.argv.pop(1))
@@ -182,6 +180,14 @@ if __name__ == "__main__":
     args['user'] = sys.argv.pop(1)
     args['password'] = sys.argv.pop(1)
     load_known_payloads(validate_file(sys.argv.pop(1)))
+    try:
+        args['count'] = int(sys.argv.pop(1))
+        if args['count'] <= 0:
+            sys.stderr.write('Count must be a positive number')
+            usage()
+    except:
+        sys.stderr.write('Count must be a number')
+        usage()
 
     message = ONVIFMessage(args['template'])
     for param in message.get_all_params():

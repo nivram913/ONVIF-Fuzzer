@@ -5,7 +5,6 @@
 ## Requirements
 
 - requests >= 2.18.4
-- xeger >= 0.3.3
 
 ## Description
 
@@ -14,7 +13,7 @@ This tool is for fuzz parameters of ONVIF messages (IP cameras are targeted righ
 ## Usage
 
 ```
-Fuzzer.py <template file> <ip address> [-p <port>] <service url> <user> <password> <known payloads file>
+Fuzzer.py <template file> <ip address> [-p <port>] <service url> <user> <password> <known payloads file> <payload count>
 ```
 - Template files are included in *commands_templates* directory (these files must be populated with default values with the *populate.py* tool)
 - \<ip address> is the address of an IP camera
@@ -22,6 +21,7 @@ Fuzzer.py <template file> <ip address> [-p <port>] <service url> <user> <passwor
 - The *service url* is the url that handle the ONVIF service (like "/onvif/device_service")
 - You must specify *user* and *password* for authenticate requests (for now, only HTTP Digest is currently in use)
 - You can specify a custom known attacks list file in the last argument
+- You can choose how many payloads are generated per parameter
 
 ### Default parameters value in template files (*populate.py* tool)
 
