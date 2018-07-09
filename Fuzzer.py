@@ -182,7 +182,7 @@ if __name__ == "__main__":
     load_known_payloads(validate_file(sys.argv.pop(1)))
     try:
         args['count'] = int(sys.argv.pop(1))
-        if args['count'] <= 0:
+        if args['count'] < 0:
             sys.stderr.write('Count must be a positive number')
             usage()
     except:
