@@ -7,17 +7,17 @@ import requests
 from requests.auth import HTTPDigestAuth
 
 from ONVIFMessage import ONVIFMessage
+from ParamTypes import ParamTypes
 
 args = {}
 known_payloads = []
 
 
-def analyse_response(req, param, payload, rsp, exception):
+def analyse_response(req, right_param, rsp, exception):
     """
     Analyse the response rsp from the server against the payload in req
     :param req: Request string containing the payload
-    :param param: The fuzzed parameter
-    :param payload: The payload used
+    :param right_param: Parameter value is correct against regex (boolean)
     :param rsp: Optional Response object
     :param exception: Optional Exception object
     :return: None
@@ -73,11 +73,6 @@ def generate_payloads(n_random=100):
     """
     global known_payloads
 
-    # x = Xeger(limit=50)
-
-    # Pseudo random payloads
-    # payloads = [x.xeger(ParamTypes[type_param]['regex']) for i in range(n_pseudo)]
-
     payloads = []
 
     # Random payloads
@@ -99,6 +94,11 @@ def generate_payloads(n_random=100):
     return payloads
 
 
+def param_right_regex(regex, value):
+    r = re.compile(regex)
+    return r.fullmatch(value)
+
+
 def fuzz_param(message, param):
     """
     Fuzz ONVIF message on parameter 'param'
@@ -115,8 +115,6 @@ def fuzz_param(message, param):
     for payload in payloads:
         message.set_param(param, payload)
         req = message.get_message()
-        rsp = None
-        exception = None
 
         try:
             rsp = requests.post('http://{host}:{port}{url}'.format(host=args['host'], port=args['port'],
@@ -126,8 +124,9 @@ def fuzz_param(message, param):
         except Exception as e:
             rsp = None
             exception = e
-        finally:
-            analyse_response(req, param, payload, rsp, exception)
+
+        analyse_response(req, param_right_regex(ParamTypes[message.params[param].type]['regex'], payload),
+                         rsp, exception)
 
 
 if __name__ == "__main__":
