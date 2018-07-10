@@ -13,9 +13,9 @@ args = {}
 known_payloads = []
 
 
-def analyse_response(req, right_param, rsp, exception):
+def analyze_response(req, right_param, rsp, exception):
     """
-    Analyse the response rsp from the server against the payload in req
+    Analyze the response rsp from the server against the payload in req
     :param req: Request string containing the payload
     :param right_param: Parameter value is correct against regex (boolean)
     :param rsp: Optional Response object
@@ -36,8 +36,13 @@ def analyse_response(req, right_param, rsp, exception):
             print('Client error detected by the server:')
         elif rsp.status_code >= 500:  # HTTP code to indicate server error, service crash ?
             print('Server error:')
-        else:  # HTTP code to indicate that request was accepted, good ?
-            print('Request accepted by the server:')
+        elif rsp.status_code == 200:  # HTTP code to indicate that request was accepted, good ?
+            if right_param:
+                print('Request accepted by the server with invalid parameter:')
+            else:
+                print('Request accepted by the server:')
+        else:
+            print('Unexpected status code {}:'.format(rsp.status_code))
 
         print(req.decode('ascii'))
         print(rsp.content.decode('ascii'))
@@ -125,7 +130,7 @@ def fuzz_param(message, param):
             rsp = None
             exception = e
 
-        analyse_response(req, param_right_regex(ParamTypes[message.params[param].type]['regex'], payload),
+        analyze_response(req, param_right_regex(ParamTypes[message.params[param].type]['regex'], payload),
                          rsp, exception)
 
 

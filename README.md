@@ -20,7 +20,7 @@ Fuzzer.py <template file> <ip address> [-p <port>] <service url> <user> <passwor
 - You can specify a custom destination port with *-p* option
 - The *service url* is the url that handle the ONVIF service (like "/onvif/device_service")
 - You must specify *user* and *password* for authenticate requests (for now, only HTTP Digest is currently in use)
-- You can specify a custom known attacks list file in the last argument
+- You can specify a custom known attacks list file in the last argument (a default one is provided with this tool)
 - You can choose how many **random** payloads are generated per parameter
 
 ### Default parameters value in template files (*populate.py* tool)
