@@ -113,6 +113,9 @@ def fuzz_param(message, param):
     """
     global args
 
+    headers = {'Connection': 'close',
+               'Content-Type': 'application/soap+xml; charset=utf-8'}
+
     init_all_params(message)
 
     payloads = generate_payloads(args['count'])
@@ -124,7 +127,8 @@ def fuzz_param(message, param):
         try:
             rsp = requests.post('http://{host}:{port}{url}'.format(host=args['host'], port=args['port'],
                                                                    url=args['url']),
-                                req, auth=HTTPDigestAuth(args['user'], args['password']), timeout=30)  # timeout based on ONVIF Device Test Tool
+                                req, headers=headers, auth=HTTPDigestAuth(args['user'], args['password']),
+                                timeout=30)  # timeout based on ONVIF Device Test Tool
             exception = None
         except Exception as e:
             rsp = None
